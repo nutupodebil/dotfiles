@@ -1,0 +1,371 @@
+
+
+/*  COLORS  */
+
+@import "../../.cache/iris/colors-waybar.css";
+/*  full path is ~/.cache/iris/colors-waybar  */
+
+@define-color background @bg;
+@define-color foreground @fg;
+
+
+/*  GENERAL  */
+* {
+  /*font-family: "Fira Sans";*/
+  font-family: "Fira Sans Semibold", "Font Awesome 7 Free", FontAwesome,  Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px; 
+}
+
+window#waybar {
+    border-radius: 6px;
+
+    background-color: transparent;
+    border-bottom: 0px solid #ffffff;
+    transition-property: background-color;
+    transition-duration: 0.5s; 
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+
+
+/*  TOOLTIP  */
+tooltip {
+    margin: 0px;
+    padding: 20px;
+    border-radius: 8px;
+
+    background-color: @background;
+    opacity:0.95;
+}
+
+tooltip label {
+    color: @foreground;
+}
+
+
+
+/*  MODULES LEFT  */
+#workspaces {
+    margin: 10px 6px 10px 6px;
+    padding: 0px 2px;
+    border-radius: 8px;
+    border: 0px;
+    
+    background: @background; /*@surface*/
+    opacity: 0.95;
+    
+    /*
+    color: @foreground;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 14px;
+    */
+}
+
+#workspaces button {
+    margin: 4px 4px;
+    padding: 0px 5px;
+    border-radius: 8px;
+
+    background-color: @dim; /*@color6;*/
+    transition: all 0.2s ease-in-out;
+    opacity: 0.75;
+
+    /*
+    color: @foreground;
+    font-weight: bold;
+    */
+}
+
+#workspaces button.active {
+    border-radius: 6px;
+    min-width: 36px;
+    transition: all 0.2s ease-in-out;
+    
+
+    background: @dim; /*@color12;*/
+    opacity: 1.0;
+
+    color: @accent; /*@background; @color0;*/
+}
+
+#workspaces button:hover {
+    border-radius: 10px;
+    
+    background: @dim;
+    opacity:0.7;
+
+    color: @foreground;
+}
+
+#language {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 8px 0px 8px;
+    border-radius: 8px; /*15px;*/
+
+    background-color: @background;
+    opacity: 1.0;
+
+    color: @accent; /*rgb(17, 217, 203);*/
+    font-size: 16px;
+}
+
+#window {
+    margin: 12px 6px 12px 6px;
+    padding: 1px 10px 0px 10px;
+    border-radius: 8px; /*12px;*/
+
+    background: @background;
+    opacity: 0.95;
+
+    color: @foreground; /*@green @color13;*/
+    font-size:16px;
+    font-weight:normal;
+}
+
+
+
+/*  MODULES CENTER  */
+#power-profiles-daemon {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 10px;
+
+    background: @background;
+    opacity: 0.95;
+    
+    color: @foreground; /* @yellow; */
+}
+
+#clock,
+
+#clock {
+    margin: 11px 6px 11px 6px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 8px;
+
+    background-color: @background; /*@color13;*/
+    opacity: 1.0;
+
+    color: @foreground;
+    font-size: 20px;
+}
+
+#custom-notification {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 13px 0px 9px;
+    border-radius: 10px;
+
+    background: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-family: "JetBrains Nerd Font Propo";
+}
+
+
+
+
+/*  MODULES RIGHT */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#memory,
+#temperature,
+#cpu,
+
+/*  TRAY  */
+#tray {
+    margin: 12px 3px 12px 6px;
+    padding-left: 0px; /* 2px; */
+    padding-right: 0px; /* 2px; */
+    border-radius: 8px;
+
+    background-color: transparent;  /*@background;*/
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red; /*#eb4d4b;*/
+    opacity: 0.8;
+}
+
+/*  PULSEAUDIO  */
+#pulseaudio {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 8px 0px 6px; /* 2px 6px 0px 6px; */
+    border-radius: 8px; /*15px;*/
+
+    background-color: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-size: 16px;    
+}
+
+#pulseaudio.muted {
+    background-color: @background;
+
+    color: @foreground;
+}
+
+/*  BACKLIGHT  */
+#backlight {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 7px 0px 8px;
+    border-radius: 8px; /*15px;*/
+
+    background-color: @background;
+    opacity: 0.95;
+    
+    color: @foreground;
+    font-size: 16px;
+}
+
+/*  BATTERY  */
+#battery {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 8px; /*15px;*/
+
+    background-color: @background;
+    opacity: 0.95;
+    
+    color: @foreground;
+    font-size: 15px; /*16px;*/
+}
+
+#battery.charging, #battery.plugged {
+    background-color: @background;
+
+    color: @foreground;
+}
+
+@keyframes blink {
+    to {
+        background-color: @yellow;
+        color: @foreground;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red; /*#f53c3c;*/
+
+    color: @foreground; /*@textcolor3;*/
+
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/*  NETWORK  */
+#network {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 8px; /*15px;*/
+
+    background-color: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-size: 14px; 
+}
+
+#network.ethernet {
+    background-color: @background;
+
+    color: @foreground;
+}
+
+#network.wifi {
+    background-color: @background;
+
+    color: @foreground;
+}
+
+#network {
+    background-color: @background; /*#2980b9;*/
+}
+
+#network.disconnected {
+    background-color: @red; /*#f53c3c;*/
+}
+
+/*  HARDWARE  */
+#memory,#temperature{ 
+    margin: 12px 0px 12px 0px;
+    padding: 0px 0px 0px 0px;
+    border-radius: 0px;
+    
+    background-color: transparent;/*@background;*/
+    
+    color: @yellow;
+    font-size:15px;
+}
+#memory {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+#temperature{
+    margin-left: 2px;
+    margin-right: 0px;
+}
+#cpu {    
+    margin: 12px 6px 12px 6px;
+    padding: 2px 8px 0px 8px;
+    border-radius: 8px;
+
+    background: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+}
+
+/*  CUSTOM EXIT  */
+#custom-exit {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 6px 0px 6px;
+    border-radius: 8px;
+
+    background-color: @background;
+    opacity: 1.0;
+
+    color: @red; /*@color13; @color5; @textcolor3;*/
+    font-size:20px;
+}
+
+
+
+/*  BLUETOOTH  
+#bluetooth, #bluetooth.on, #bluetooth.connected {
+    background-color: @background;
+    font-size: 16px;
+    color: @cursor;
+    border-radius: 6px; 
+    padding: 2px 7px 0px 0px;
+    margin: 10px 15px 10px 5px;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+*/

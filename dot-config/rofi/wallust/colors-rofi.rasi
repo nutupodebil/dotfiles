@@ -1,0 +1,49 @@
+/* wallust template at ~/.config/wallust/templates/colors-rofi.rasi */
+
+* {
+active-background: #8CB2B2;
+active-foreground: #FAFAFA;
+normal-background: #161616;
+normal-foreground: #FAFAFA;
+urgent-background: #8CB2B2;
+urgent-foreground: #FAFAFA;
+
+alternate-active-background: #77725B;
+alternate-active-foreground: #FAFAFA;
+alternate-normal-background: #161616;
+alternate-normal-foreground: #FAFAFA;
+alternate-urgent-background: #161616;
+alternate-urgent-foreground: #FAFAFA;
+
+selected-active-background: #8CB2B2;
+selected-active-foreground: #161616;
+selected-normal-background: #8CB2B2;
+selected-normal-foreground: #161616;
+selected-urgent-background: #77725B;
+selected-urgent-foreground: #161616;
+
+background-color: #161616;
+background: rgba(0,0,0,0.7);
+foreground: #FAFAFA;
+border-color: #8CB2B2;
+
+color0: #414140;
+color1: #49493A;
+color2: #49493A;
+color3: #676750;
+color4: #698686;
+color5: #698686;
+color6: #B59191;
+color7: #F0F0F0;
+color8: #A8A8A8;
+color9: #4E4E3E;
+color10: #4E4E3E;
+color11: #77725B;
+color12: #8CB2B2;
+color13: #8CB2B2;
+color14: #F2C2C2;
+color15: #F0F0F0;
+
+
+}
+

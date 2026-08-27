@@ -1,0 +1,4 @@
+/* wallust template at ~/.config/wallust/templates/wallpaper.rasi */
+* {
+wallpaper: url("/home/vldzn/Pictures/wallpapers/wallhaven-mldl19.jpg", both);
+}

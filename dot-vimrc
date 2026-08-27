@@ -1,0 +1,46 @@
+
+call plug#begin()
+Plug 'preservim/nerdtree'
+call plug#end()
+
+nnoremap <C-b> :NERDTreeToggle<CR>
+
+set encoding=utf-8             " Устанавливаем кодировку UTF-8
+set fileencodings=utf-8        " Поддержка кодировки UTF-8 для файлов
+
+"set nocompatible               " Отключаем совместимость с vi
+filetype plugin indent on      " Включаем поддержку плагинов 
+
+set relativenumber
+set number
+set numberwidth=4
+
+set foldcolumn=2
+highlight FoldColumn guibg=NONE ctermbg=NONE
+
+highlight LineNr ctermfg=NONE guifg=NONE
+highlight CursorLineNr ctermfg=NONE guifg=NONE
+
+syntax on                      " Включаем подсветку синтаксиса
+
+set scrolloff=5                " Отступ от края экрана при прокрутке
+set background=dark
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4 
+
+set smarttab                   " Умное поведение табуляции
+set smartindent                " Умное выравнивание для кода
+
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+set nowrap                     " Отключаем перенос строк
+set mouse=a                    " Включаем поддержку мыши
+
+
+set hlsearch                   " Включаем подсветку поиска
+set incsearch                  " Поиск по мере ввода
+set ic                         " Игнорировать регистр при поиске
+set smartcase                  " Игнорировать регистр, если нет заглавных букв

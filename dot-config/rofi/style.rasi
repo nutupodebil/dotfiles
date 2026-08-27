@@ -1,0 +1,182 @@
+
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "Applications";
+	drun-display-format:        "{name}";
+}
+
+/*****----- Global Properties -----*****/
+@import                          "wallust/colors-rofi.rasi"
+//@import                          "wallust/wallpaper.rasi"
+@import                          "fonts.rasi"
+
+//bg: @color0
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       700px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px solid;
+    border-radius:               16px;
+    border-color:                @color8; /*@selected;*/
+    background-color:            rgba(0,0,0,0.5); /*@background;*/
+    
+    /*
+    @background;
+    transparent;
+    */
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     30px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @color8; /*@selected;*/
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               16px;
+    border-color:                @color8; /*@selected;*/
+    background-color:            @color1; /*@background-alt;*/
+    text-color:                  @color14; /*@foreground;*/
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     12px;
+    border-radius:               16px;
+    background-color:            @color0; /*@selected;*/
+    text-color:                  @color14; /*@background;*/
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    padding:                     12px;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       7;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @color8; /*@selected;*/
+    background-color:            transparent;
+    text-color:                  @color14; /*@foreground;*/
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @color8; /*@selected;*/
+    border-radius:               0px;
+    background-color:            @color1; /*@background-alt;*/
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     5px;
+    border:                      0px solid;
+    border-radius:               16px;
+    border-color:                @color8; /*@selected;*/
+    background-color:            @color3; /*@background;*/
+    text-color:                  @color14; /*@foreground;*/
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            @color1; /*@background-alt;*/
+    text-color:                  @color14; /*@foreground;*/
+}
+element alternate.normal {
+    background-color:            @color1; /*@background-alt;*/
+    text-color:                  @color14; /*@foreground;*/
+}
+element selected.normal {
+    border:                      0px 5px 0px 5px;
+    border-radius:               16px;
+    border-color:                @color8; /*@selected;*/
+    background-color:            @color1; /*@background-alt;*/
+    text-color:                  @color15; /*@selected;*/
+}
+element-icon {
+    padding:                     0px 0px 0px 10px;
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               16px;
+    border-color:                @color8; /*@selected;*/
+    background-color:            @color3; /*@background;*/
+    text-color:                  @color14; /*@foreground;*/
+}
+textbox {
+    background-color:            @color3; /*@background;*/
+    text-color:                  @color14; /*@foreground;*/
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}
