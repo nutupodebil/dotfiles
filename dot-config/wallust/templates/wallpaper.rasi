@@ -1,4 +1,0 @@
-/* wallust template at ~/.config/wallust/templates/wallpaper.rasi */
-* {
-wallpaper: url("{{wallpaper}}", both);
-}

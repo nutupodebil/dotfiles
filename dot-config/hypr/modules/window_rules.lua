@@ -32,6 +32,7 @@ hl.window_rule({
 	pseudo = true,
 	float = true,
 	size = { 800, 600 },
+	opacity = "0.9 override 0.5 1.0",
 	animation = "popin",
 })
 

@@ -62,16 +62,5 @@ wlogout.target          = '~/.config/wlogout/wallust/colors-wlogout.css'
 path_to_wall.template   = 'wllppr.conf'
 path_to_wall.target     = '~/.cache/wallust/wllppr.conf'
 
-#shell-colors.template   = 'colors.sh'
-#shell-colors.target     = '~/.cache/wallust/colors.sh'
-
-#wallpaper-rofi.template = "wallpaper.rasi"
-#wallpaper-rofi.target   = '~/.config/rofi/wallust/wallpaper.rasi' 
-
-wallpaper.template      = 'wallpaper'
-wallpaper.target        = '~/.cache/matugen/wallpaper'
-
-#kitty.template          = "colors-kitty.conf"
-#kitty.target            = "~/.config/kitty/wallust/colors.conf"
 
 
