@@ -82,7 +82,7 @@
 
     "clock": {
         "format" : "{0:%H:%M} | {0:%d %b %Y}",
-        "timezone": "Europe/Kaliningrad", // "Europe/Moscow" "Europe/Kaliningrad"
+        //"timezone": "Europe/Moscow", // "Europe/Moscow" "Europe/Kaliningrad"
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d-%m-%Y}"
     },

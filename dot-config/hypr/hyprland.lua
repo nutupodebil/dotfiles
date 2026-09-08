@@ -28,6 +28,10 @@ require("modules/monitors")
 require("modules/base")
 
 
+--  плагины
+require("modules/plugins")
+
+
 --  девайсы
 require("modules/devices")
 

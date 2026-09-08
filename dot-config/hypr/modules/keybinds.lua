@@ -34,3 +34,6 @@ hl.bind(mod .. " + L", hl.dsp.exec_cmd("wlogout -s || pkill wlogout"))
 hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 
+hl.bind("SUPER + G", function()
+    hl.plugin.hyprexpo.expo("toggle")
+end)

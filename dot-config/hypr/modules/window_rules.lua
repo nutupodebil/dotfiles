@@ -58,7 +58,7 @@ hl.window_rule({
 	match = { class = "org.telegram.desktop" },
 	opacity = "0.95 override 0.8 override 1.0 override",
 	pseudo = true,
-	float = true,
+	--float = true,
 	size = { 1200, 900 },
 })
 
@@ -100,4 +100,9 @@ hl.window_rule({
 hl.window_rule({
 	match = { class = "hyprland-share-picker" },
 	size = { 800, 600 },
+})
+
+hl.window_rule({
+	match = { class = "code-oss" },
+	opacity = "0.95 override 0.8 override 1.0 override",
 })

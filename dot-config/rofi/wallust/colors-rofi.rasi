@@ -1,48 +1,48 @@
 /* wallust template at ~/.config/wallust/templates/colors-rofi.rasi */
 
 * {
-active-background: #6178A3;
-active-foreground: #D0D5DF;
-normal-background: #251F20;
-normal-foreground: #D0D5DF;
-urgent-background: #6178A3;
-urgent-foreground: #D0D5DF;
+active-background: #503B39;
+active-foreground: #F7B2A9;
+normal-background: #141111;
+normal-foreground: #F7B2A9;
+urgent-background: #813738;
+urgent-foreground: #F7B2A9;
 
-alternate-active-background: #566785;
-alternate-active-foreground: #D0D5DF;
-alternate-normal-background: #251F20;
-alternate-normal-foreground: #D0D5DF;
-alternate-urgent-background: #251F20;
-alternate-urgent-foreground: #D0D5DF;
+alternate-active-background: #503B39;
+alternate-active-foreground: #F7B2A9;
+alternate-normal-background: #141111;
+alternate-normal-foreground: #F7B2A9;
+alternate-urgent-background: #141111;
+alternate-urgent-foreground: #F7B2A9;
 
-selected-active-background: #6178A3;
-selected-active-foreground: #251F20;
-selected-normal-background: #6178A3;
-selected-normal-foreground: #251F20;
-selected-urgent-background: #566785;
-selected-urgent-foreground: #251F20;
+selected-active-background: #503B39;
+selected-active-foreground: #141111;
+selected-normal-background: #503B39;
+selected-normal-foreground: #141111;
+selected-urgent-background: #503B39;
+selected-urgent-foreground: #141111;
 
-background-color: #251F20;
+background-color: #141111;
 background: rgba(0,0,0,0.7);
-foreground: #D0D5DF;
-border-color: #6178A3;
+foreground: #F7B2A9;
+border-color: #503B39;
 
-color0: #524A4B;
-color1: #434860;
-color2: #4C5A72;
-color3: #4C5A72;
-color4: #667898;
-color5: #667898;
-color6: #667898;
-color7: #B4BBC9;
-color8: #7E838C;
-color9: #49506C;
-color10: #566785;
-color11: #566785;
-color12: #6178A3;
-color13: #6178A3;
-color14: #6178A3;
-color15: #B4BBC9;
+color0: #3E3B3B;
+color1: #4B3836;
+color2: #4B3836;
+color3: #4B3836;
+color4: #4B3836;
+color5: #6F3536;
+color6: #C04332;
+color7: #EB897C;
+color8: #A46057;
+color9: #503B39;
+color10: #503B39;
+color11: #503B39;
+color12: #503B39;
+color13: #813738;
+color14: #E9331B;
+color15: #EB897C;
 
 
 }

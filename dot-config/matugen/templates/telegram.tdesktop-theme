@@ -219,7 +219,7 @@ historyPeerUserpicFg: {{colors.background.default.hex}};
 // Messages
 msgInBg: {{colors.surface_container_high.default.hex}};
 msgInBgSelected: {{colors.surface_container_highest.default.hex}};
-msgOutBg: {{colors.primary.default.hex}};
+msgOutBg: {{colors.primary.default.hex | lighten: -15.0}};
 msgOutBgSelected: {{colors.primary_fixed_dim.default.hex}};
 msgSelectOverlay: {{colors.primary.default.hex}}4c;
 msgInDateFg: {{colors.on_surface_variant.default.hex}};

@@ -1,1 +1,1 @@
-mon_bright = 'amdgpu_bl2'
+mon_bright = 'amdgpu_bl1'

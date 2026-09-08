@@ -54,7 +54,7 @@ tooltip label {
 #workspaces {
     margin: 10px 6px 10px 6px;
     padding: 0px 2px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 0px;
     
     background: @background; /*@surface*/
@@ -92,7 +92,7 @@ tooltip label {
     background: @dim; /*@color12;*/
     opacity: 1.0;
 
-    color: @accent; /*@background; @color0;*/
+    color: @foreground; /*@background; @color0;*/
 }
 
 #workspaces button:hover {
@@ -322,6 +322,8 @@ tooltip label {
 #memory {
     margin-left: 2px;
     margin-right: 2px;
+
+    color: @accent;
 }
 #temperature{
     margin-left: 2px;

@@ -74,7 +74,7 @@
     "backlight": {
       "label": "󰍹",
       "min": 20,
-"device": "amdgpu_bl2"
+"device": "amdgpu_bl1"
     },
     "buttons-grid": {
       "actions": [

@@ -38,7 +38,7 @@ window#waybar.empty #window {
 tooltip {
     margin: 0px;
     padding: 20px;
-    border-radius: 16px;
+    border-radius: 8px;
 
     background-color: @background;
     opacity:0.95;

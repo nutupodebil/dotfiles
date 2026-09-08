@@ -9,6 +9,11 @@ hl.device({
 })
 
 hl.device({
+    name        = "razer-razer-deathadder-v3-pro-1",
+    sensitivity = -1.0,
+})
+
+hl.device({
     name           = "asuf1209:00-2808:0219-touchpad",
     enabled        = false,
     natural_scroll = true,
