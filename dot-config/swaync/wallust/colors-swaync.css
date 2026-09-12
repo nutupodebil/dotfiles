@@ -1,22 +1,22 @@
 /* wallust template at ~/.config/wallust/templates/colors-swaync.css */
 
-@define-color foreground #F7B2A9;
-@define-color background #141111;
-@define-color cursor #8A625D;
+@define-color foreground #FAF5F3;
+@define-color background #1A1A1C;
+@define-color cursor #8C8A8E;
 
-@define-color color0  #3E3B3B;
-@define-color color1  #4B3836;
-@define-color color2  #4B3836;
-@define-color color3  #4B3836;
-@define-color color4  #4B3836;
-@define-color color5  #6F3536;
-@define-color color6  #C04332;
-@define-color color7  #EB897C;
-@define-color color8  #A46057;
-@define-color color9  #503B39;
-@define-color color10 #503B39;
-@define-color color11 #503B39;
-@define-color color12 #503B39;
-@define-color color13 #813738;
-@define-color color14 #E9331B;
-@define-color color15 #EB897C;
+@define-color color0  #454547;
+@define-color color1  #3C3C52;
+@define-color color2  #3C3C52;
+@define-color color3  #815C5E;
+@define-color color4  #815C5E;
+@define-color color5  #B59384;
+@define-color color6  #B59384;
+@define-color color7  #F0E9E5;
+@define-color color8  #A8A3A0;
+@define-color color9  #414159;
+@define-color color10 #414159;
+@define-color color11 #936668;
+@define-color color12 #936668;
+@define-color color13 #F2C5B0;
+@define-color color14 #F2C5B0;
+@define-color color15 #F0E9E5;

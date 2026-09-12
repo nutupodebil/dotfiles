@@ -51,6 +51,7 @@
 
     "hyprland/window": {
         "icon": true,
+        "format": "{initialTitle}",
         "icon-size": 20,
         "max-length": 30,
         //"rewrite": {
@@ -62,7 +63,8 @@
         //},
     
         "separate-outputs": true,
-        "tooltip": false
+        "tooltip": true,
+        "tooltip-format": "{title}"
     },
 
 
@@ -81,8 +83,8 @@
     },
 
     "clock": {
-        "format" : "{0:%H:%M} | {0:%d %b %Y}",
-        "timezone": "Europe/Kaliningrad", // "Europe/Moscow" "Europe/Kaliningrad"
+        "format" : "{0:%H:%M} ┃ {0:%d %b %Y}",
+        //"timezone": "Europe/Kaliningrad", // "Europe/Moscow" "Europe/Kaliningrad"
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d-%m-%Y}"
     },

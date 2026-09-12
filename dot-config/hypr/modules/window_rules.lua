@@ -8,6 +8,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { class = "zen", title = "Картинка в картинке" },
+	float = true,
+	size = { 640, 400 },
+})
+
+hl.window_rule({
 	match = { class = "firefox" },
 	opacity = "0.95 override 0.9 override 1.0 override",
 })
@@ -105,4 +111,9 @@ hl.window_rule({
 hl.window_rule({
 	match = { class = "code-oss" },
 	opacity = "0.95 override 0.8 override 1.0 override",
+})
+
+hl.window_rule({
+	match = { class = "kitty", title = "nvim" },
+	opacity = "0.9 override 0.7 override 1.0 override",
 })

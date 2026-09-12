@@ -27,8 +27,8 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
-    border-radius:               16px;
+    border:                      2px solid;
+    border-radius:               10px;
     border-color:                @color8; /*@selected;*/
     background-color:            rgba(0,0,0,0.5); /*@background;*/
     

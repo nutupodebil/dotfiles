@@ -80,10 +80,10 @@ post_hook   = 'spicetify refresh'
 #'pgrep -x spicetify > /dev/null || spicetify apply -n'
 
 
-#[templates.steam]
-#input_path  = '~/.config/matugen/templates/steam.css'
-#output_path = '~/.config/AdwSteamGtk/custom.css'
-#post_hook   =  'adwaita-steam-gtk -i'
+[templates.steam]
+input_path  = '~/.config/matugen/templates/steam.css'
+output_path = '~/.config/AdwSteamGtk/custom.css'
+post_hook   =  'adwaita-steam-gtk -i'
 
 
 [templates.telegram]
