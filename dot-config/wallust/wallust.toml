@@ -61,6 +61,3 @@ wlogout.target          = '~/.config/wlogout/wallust/colors-wlogout.css'
 
 path_to_wall.template   = 'wllppr.conf'
 path_to_wall.target     = '~/.cache/wallust/wllppr.conf'
-
-
-
