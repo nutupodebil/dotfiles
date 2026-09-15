@@ -6,7 +6,7 @@ caching = true
 # Value from -1 to 1.
 # -1 represents minimum contrast, 0 represents standard (i.e. the design as spec'd),
 # and 1 represents maximum contrast.
-contrast = 0
+contrast = 0.25
 
 
 [templates.kitty]
