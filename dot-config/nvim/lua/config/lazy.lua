@@ -14,6 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local lualine_opts_ref = nil
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -45,59 +46,75 @@ require("lazy").setup({
       opts = function(_, opts)
         local palette_path = vim.fn.expand("~/.cache/matugen/nvim-colors.json")
 
-        local f = io.open(palette_path, "r")
-        if not f then
-          return opts
+        -- Читаем палитру. Если JSON ещё не дописан matugen'ом — вернём nil.
+        local function load_palette()
+          local f = io.open(palette_path, "r")
+          if not f then
+            return nil
+          end
+          local content = f:read("*a")
+          f:close()
+          if not content or #content == 0 then
+            return nil
+          end
+          local ok, c = pcall(vim.json.decode, content)
+          if not ok or not c then
+            return nil
+          end
+          c = c.colors or c.palette or c
+          -- Валидация: без этих ключей тема бессмысленна
+          if not (c.surface and c.primary and c.on_primary) then
+            return nil
+          end
+          return c
         end
-        local content = f:read("*a")
-        f:close()
-        local ok, c = pcall(vim.json.decode, content)
-        if not ok or not c then
-          return opts
-        end
-        c = c.colors or c.palette or c
 
-        -- Секция со всеми шестью подсекциями a..z, чтобы ни одна не тянулась
-        -- из fallback-темы lualine (именно там и жил голубой).
-        local function section(a_bg, a_fg)
+        -- Строим таблицу темы. Используется и в opts, и в init.
+        local function build_theme(c)
+          local function section(a_bg, a_fg)
+            return {
+              a = { bg = a_bg, fg = a_fg, gui = "bold" },
+              b = { bg = c.surface_container, fg = c.on_surface_variant },
+              c = { bg = "NONE", fg = c.outline },
+              x = { bg = "NONE", fg = c.outline },
+              y = { bg = c.surface_container, fg = c.on_surface_variant },
+              z = { bg = c.surface_container, fg = c.on_surface_variant },
+            }
+          end
           return {
-            a = { bg = a_bg, fg = a_fg, gui = "bold" },
-            b = { bg = c.surface_container, fg = c.on_surface_variant },
-            c = { bg = "NONE", fg = c.outline }, -- прозрачная середина
-            z = { bg = a_bg, fg = a_fg, gui = "bold" },
-            y = { bg = c.surface_container, fg = c.on_surface_variant },
-            x = { bg = "NONE", fg = c.outline },
+            normal = section(c.primary, c.on_primary),
+            insert = section(c.tertiary, c.on_primary),
+            visual = section(c.secondary, c.on_primary),
+            replace = section(c.error, c.surface),
+            command = section(c.secondary_container, c.on_primary),
+            inactive = {
+              a = { bg = c.surface_container, fg = c.on_surface_variant },
+              b = { bg = c.surface_container, fg = c.on_surface_variant },
+              c = { bg = "NONE", fg = c.on_surface_variant },
+              x = { bg = "NONE", fg = c.on_surface_variant },
+              y = { bg = c.surface_container, fg = c.on_surface_variant },
+              z = { bg = c.surface_container, fg = c.on_surface_variant },
+            },
           }
         end
 
+        -- Первичная установка темы при старте
         opts.options = opts.options or {}
-        opts.options.theme = {
-          normal = section(c.primary, c.on_primary),
-          insert = section(c.tertiary, c.on_primary),
-          visual = section(c.secondary, c.on_primary),
-          replace = section(c.error, c.surface),
-          command = section(c.secondary_container, c.on_primary),
-          inactive = {
-            a = { bg = c.surface_container, fg = c.on_surface_variant },
-            b = { bg = c.surface_container, fg = c.on_surface_variant },
-            c = { bg = "NONE", fg = c.on_surface_variant },
-            x = { bg = c.surface_container, fg = c.on_surface_variant },
-            y = { bg = c.surface_container, fg = c.on_surface_variant },
-            z = { bg = c.surface_container, fg = c.on_surface_variant },
-          },
-        }
+        local c = load_palette()
+        if c then
+          opts.options.theme = build_theme(c)
+        end
 
-        local filetype_idx = nil
+        -- Отключаем раскраску filetype в секции c (как было у вас)
         for i, sect in ipairs(opts.sections.lualine_c) do
           if type(sect) == "table" and sect[1] == "filetype" then
-            filetype_idx = i
+            opts.sections.lualine_c[i].colored = false
             break
           end
         end
-        if filetype_idx then
-          opts.sections.lualine_c[filetype_idx].colored = false
-        end
 
+        -- Сохраняем opts, чтобы init мог их переиспользовать
+        lualine_opts_ref = opts
         return opts
       end,
 
@@ -111,22 +128,56 @@ require("lazy").setup({
           end
           local content = f:read("*a")
           f:close()
+          if not content or #content == 0 then
+            return nil
+          end
           local ok, c = pcall(vim.json.decode, content)
           if not ok or not c then
             return nil
           end
-          return c.colors or c.palette or c
+          c = c.colors or c.palette or c
+          if not (c.surface and c.primary and c.on_primary) then
+            return nil
+          end
+          return c
         end
 
-        -- Точная копия шаблона matugen.nvim/lua/matugen/templates/lualine.lua
-        -- + перекраска StatusLine, чтобы убрать голубую подложку.
-        local function apply_matugen()
-          local c = load_palette()
+        local function build_theme(c)
+          local function section(a_bg, a_fg)
+            return {
+              a = { bg = a_bg, fg = a_fg, gui = "bold" },
+              b = { bg = c.surface_container, fg = c.on_surface_variant },
+              c = { bg = "NONE", fg = c.outline },
+              x = { bg = "NONE", fg = c.outline },
+              y = { bg = c.surface_container, fg = c.on_surface_variant },
+              z = { bg = a_bg, fg = a_fg, gui = "bold" },
+            }
+          end
+          return {
+            normal = section(c.primary, c.on_primary),
+            insert = section(c.tertiary, c.on_primary),
+            visual = section(c.secondary, c.on_primary),
+            replace = section(c.error, c.surface),
+            command = section(c.secondary_container, c.on_primary),
+            inactive = {
+              a = { bg = c.surface_container, fg = c.on_surface_variant },
+              b = { bg = c.surface_container, fg = c.on_surface_variant },
+              c = { bg = "NONE", fg = c.on_surface_variant },
+              x = { bg = "NONE", fg = c.on_surface_variant },
+              y = { bg = c.surface_container, fg = c.on_surface_variant },
+              z = { bg = c.surface_container, fg = c.on_surface_variant },
+            },
+          }
+        end
+
+        -- Прямая установка highlight-групп (копия шаблона matugen.nvim
+        -- + перекраска StatusLine и пронумерованных компонентов секции c).
+        local function apply_matugen(c)
+          c = c or load_palette()
           if not c then
             return
           end
 
-          -- Группы ровно как в шаблоне matugen.nvim
           vim.api.nvim_set_hl(0, "lualine_a_normal", { fg = c.on_primary, bg = c.primary, bold = true })
           vim.api.nvim_set_hl(0, "lualine_a_insert", { fg = c.on_primary, bg = c.tertiary, bold = true })
           vim.api.nvim_set_hl(0, "lualine_a_visual", { fg = c.on_primary, bg = c.secondary, bold = true })
@@ -139,13 +190,9 @@ require("lazy").setup({
           vim.api.nvim_set_hl(0, "lualine_b_diagnostics_info", { fg = c.secondary, bg = c.surface_container })
           vim.api.nvim_set_hl(0, "lualine_b_diagnostics_hint", { fg = c.primary, bg = c.surface_container })
 
-          -- StatusLine — фон surface вместо голубого
           vim.api.nvim_set_hl(0, "StatusLine", { bg = c.surface, fg = c.on_surface })
           vim.api.nvim_set_hl(0, "StatusLineNC", { bg = c.surface_container, fg = c.on_surface_variant })
 
-          -- Приводим все пронумерованные компоненты секции c
-          -- (lualine_c_2_normal, lualine_c_6_normal, lualine_c_12_normal и т.д.)
-          -- к тому же виду, что и lualine_c_normal: прозрачный фон, цвет outline.
           for i = 1, 30 do
             for _, mode in ipairs({ "normal", "insert", "visual", "replace", "command", "inactive" }) do
               local group = string.format("lualine_c_%d_%s", i, mode)
@@ -154,28 +201,67 @@ require("lazy").setup({
               end
             end
           end
+
+          for i = 1, 30 do
+            for _, mode in ipairs({ "normal", "insert", "visual", "replace", "command", "inactive" }) do
+              local group = string.format("lualine_x_%d_%s", i, mode)
+              if vim.fn.hlexists(group) == 1 then
+                vim.api.nvim_set_hl(0, group, { fg = c.outline, bg = nil })
+              end
+            end
+          end
+        end
+
+        -- Полный цикл обновления: пересобираем тему, пере-вызываем setup(),
+        -- заново ставим группы. Всё это — поверх того, что сделал matugen.nvim.
+        local function full_refresh()
+          local c = load_palette()
+          if not c then
+            return
+          end
+
+          if lualine_opts_ref then
+            lualine_opts_ref.options = lualine_opts_ref.options or {}
+            lualine_opts_ref.options.theme = build_theme(c)
+            pcall(function()
+              require("lualine").setup(lualine_opts_ref)
+            end)
+          end
+
+          apply_matugen(c)
+
+          -- Пинаем перерисовку статусной строки
+          pcall(function()
+            require("lualine").refresh()
+          end)
+        end
+
+        -- Многократный запуск с разными задержками:
+        -- 150 мс — обычно уже после matugen.nvim,
+        -- 400 мс — на случай, если файл ещё писался,
+        -- 800 мс — «страховочный» прогон, покрывающий редкие гонки.
+        local function schedule_refresh()
+          vim.defer_fn(full_refresh, 150)
+          vim.defer_fn(full_refresh, 400)
+          vim.defer_fn(full_refresh, 800)
         end
 
         vim.api.nvim_create_autocmd("User", {
           pattern = "VeryLazy",
           once = true,
           callback = function()
-            vim.defer_fn(apply_matugen, 200)
+            vim.defer_fn(full_refresh, 300)
           end,
         })
 
         vim.api.nvim_create_autocmd("ColorScheme", {
-          callback = function()
-            vim.defer_fn(apply_matugen, 200)
-          end,
+          callback = schedule_refresh,
         })
 
         vim.api.nvim_create_autocmd("Signal", {
           pattern = "SIGUSR1",
           callback = function()
-            vim.schedule(function()
-              vim.defer_fn(apply_matugen, 300)
-            end)
+            vim.schedule(schedule_refresh)
           end,
         })
       end,
