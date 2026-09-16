@@ -24,7 +24,7 @@
 .control-center {
   background: alpha(@background, .55);
   border-radius: 12px;
-  border: 2px solid @color6;
+  border: 2px solid @selected;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
   margin: 18px;
   padding: 12px;
@@ -93,7 +93,7 @@ trough {
 
 progressbar {
   /*background-color: rgba(255,255,255,.1);*/
-    background-color: @color0;
+    background-color: @background-alt;
 }
 
 /* Notifications expanded-group */
@@ -212,7 +212,7 @@ progressbar {
 
   /* NOTE: Background need *opacity 1* otherwise will turn into the album art blurred  */
 .widget-mpris-player {
-    background-color: @background-sec;
+    background-color: transparent;
     border-radius: 22px;
     padding: 6px 14px;
     margin: 3px 6px 3px 6px;
@@ -250,28 +250,10 @@ picture.mpris-background {
 }
 
 /* Volume */
-/*
-.widget-volume {
-  background: @color2;
-  color: @foreground;
-  padding: 10px 20px 10px 20px;
-  margin: 3px 6px 12px 6px;
-  border-radius: 12px;
-}
-
-.widget-volume highlight,
-.widget-backlight highlight {
-  padding: 3.5px;
-  margin: 0px 10px 0px 10px;
-  border-radius: 12px;  
-  background: @foreground;
-}
-*/
-
 
 .widget-volume,.widget-backlight {
   color: @foreground;
-  background: @color2;
+  background: @background-alt;
   /*font-size: 1.4em;*/
   padding: 10px 10px 10px 15px;
   margin: 10px 6px 10px 6px;

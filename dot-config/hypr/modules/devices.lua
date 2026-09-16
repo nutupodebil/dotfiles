@@ -14,7 +14,8 @@ hl.device({
 
 hl.device({
 	name = "asuf1209:00-2808:0219-touchpad",
-	enabled = false,
+	--enabled = false,
+
 	natural_scroll = true,
 	scroll_factor = 0.26,
 	sensitivity = 0,
