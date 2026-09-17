@@ -220,6 +220,8 @@ tooltip label {
 }
 
 #pulseaudio.muted {
+    padding: 0px 8px 0px 6px;
+
     background-color: @background;
 
     color: @foreground;

@@ -1,0 +1,6 @@
+[Unit]
+Description=Update Hyprland refresh rate based on power profile
+
+[Service]
+Type=oneshot
+ExecStart=%h/.scripts/hypr-refresh.sh

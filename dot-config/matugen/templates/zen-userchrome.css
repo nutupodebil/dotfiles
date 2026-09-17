@@ -39,7 +39,7 @@
 }
 
 .urlbar-input::selection {
-  color: {{colors.on_primary.default.hex}} !important;
+  color: {{colors.on_background.default.hex}} !important;
   background-color: {{colors.primary.default.hex}} !important;
 }
 

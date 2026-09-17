@@ -16,7 +16,7 @@
 
   /* Primary button */
   --in-content-primary-button-background: {{colors.primary.default.hex}} !important;
-  --in-content-primary-button-text-color: {{colors.on_primary.default.hex}} !important;
+  --in-content-primary-button-text-color: {{colors.on_background.default.hex}} !important;
   --in-content-button-background: {{colors.surface_container.default.hex}} !important;
   --in-content-button-background-hover: {{colors.surface_container_high.default.hex}} !important;
   --in-content-button-background-active: {{colors.surface_container_highest.default.hex}} !important;
@@ -57,7 +57,7 @@
 
 /* Selection highlight */
 ::selection {
-  color: {{colors.on_primary.default.hex}} !important;
+  color: {{colors.on_background.default.hex}} !important;
   background: {{colors.primary.default.hex}} !important;
 }
 

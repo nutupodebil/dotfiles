@@ -117,3 +117,8 @@ hl.window_rule({
 	match = { class = "kitty", title = "^nvim.*" },
 	opacity = "0.9 override 0.75 override 1.0 override",
 })
+
+hl.window_rule({
+	match = { class = "kitty", title = "^vim.*" },
+	opacity = "0.9 override 0.75 override 1.0 override",
+})

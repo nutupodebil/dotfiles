@@ -11,7 +11,7 @@ export STATUS_FILE="$XDG_RUNTIME_DIR/touchpad.status"
 enable_touchpad() {
   printf "true" >"$STATUS_FILE"
 
-  notify-send -t 1200 " Touchpad" "Enabling"
+  notify-send -t 1200 " Touchpad" "Enabled"
 
   hyprctl eval "hl.device({name='$HYPRLAND_DEVICE',enabled=true})"
 }
@@ -19,13 +19,13 @@ enable_touchpad() {
 disable_touchpad() {
   printf "false" >"$STATUS_FILE"
 
-  notify-send -t 1200 "󰯆 Touchpad" "Disabling"
+  notify-send -t 1200 "󰯆 Touchpad" "Disabled"
 
   hyprctl eval "hl.device({name='$HYPRLAND_DEVICE',enabled=false})"
 }
 
 if ! [ -f "$STATUS_FILE" ]; then
-  enable_touchpad
+  disable_touchpad
 else
   if [ "$(cat "$STATUS_FILE")" = "true" ]; then
     disable_touchpad

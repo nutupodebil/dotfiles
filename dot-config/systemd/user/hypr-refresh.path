@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch power profile changes
+
+[Path]
+PathChanged=/var/lib/power-profiles-daemon/state.ini
+
+[Install]
+WantedBy=default.target
