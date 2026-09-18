@@ -1,3 +1,4 @@
 * {
     font: "JetBrainsMono Nerd Font Propo 11";
+    font-bold: "JetBrainsMono Nerd Font Propo Bold 11";
 }

@@ -1,8 +1,8 @@
-@define-color text            @foreground;
-@define-color background-alt  @color1;
-@define-color selected        @color3;
-@define-color hover           @color5;
-@define-color urgent          @color2;
+@define-color text            @fg;
+@define-color background-alt  @dim;
+@define-color selected        @accent;
+@define-color hover           alpha(@accent, .5);
+@define-color urgent          @surface;
 
 * {
 
@@ -28,11 +28,12 @@
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  background: alpha(@background, .55);
+  background: alpha(@bg, .65);
   box-shadow: 0 0 8px 0 rgba(0,0,0,.6);
-  border: 1px solid @selected;
-  border-radius: 12px;
-  margin: 8px;
+  border: 2px solid @selected;
+  border-radius: 8px;
+  color: @text;
+  margin: 6px;
   padding: 0;
 }
 
@@ -67,7 +68,7 @@
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
   background-color: @selected;
-  color: @background;
+  color: @bg;
 }
 
 .image {
@@ -97,7 +98,7 @@
 
 .floating-notifications.background .notification-row .notification-background .close-button:active {
   background-color: @selected;
-  color: @background;
+  color: @bg;
 }
 
 .notification.critical progress {

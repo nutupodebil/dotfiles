@@ -1,0 +1,1 @@
+/home/vldzn/.dotfiles/dot-config/hyprmoncfg/profiles/ac.lua

@@ -1,11 +1,12 @@
-@define-color text            @foreground;
-@define-color background-alt  alpha(@color2, .9);
-@define-color selected        @color6;
-@define-color hover           alpha(@selected, .4);
-@define-color urgent          @color2;
+@define-color text            @fg;
+@define-color background-alt  alpha(@dim, .9);
+@define-color selected        @accent;
+@define-color hover           alpha(@accent, .5);
+@define-color urgent          @dim;
+
 
 * {
-  color:            @text;
+  color: @text;
 
   all: unset;
   font-size: 16px;
@@ -22,12 +23,13 @@
 /* CONTROL CENTER ------------------------------------------------------------------------ */
 
 .control-center {
-  background: alpha(@background, .55);
+  background: alpha(@bg, .5);
   border-radius: 12px;
   border: 2px solid @selected;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
   margin: 18px;
   padding: 12px;
+  color: @text;
 }
 
 /* Notifications  */
@@ -176,7 +178,7 @@ progressbar {
 }
 
 .widget-dnd > switch slider {
-  background: @foreground;
+  background: @fg;
   border-radius: 6px;
 }
 
@@ -252,7 +254,7 @@ picture.mpris-background {
 /* Volume */
 
 .widget-volume,.widget-backlight {
-  color: @foreground;
+  color: @text;
   background: @background-alt;
   /*font-size: 1.4em;*/
   padding: 10px 10px 10px 15px;
@@ -265,7 +267,7 @@ picture.mpris-background {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   box-shadow: 0px 0px 0px alpha(#000, 0.2);
-  background: @foreground;
+  background: @text;
   border-radius: 12px;
 }
 
@@ -274,6 +276,6 @@ picture.mpris-background {
   border-radius: 12px;
   margin: 0px 10px 0px 10px;
   min-height: 8px;
-  background: alpha(@background,0.5);
+  background: alpha(@bg,0.5);
   box-shadow: 0px 0px 3px alpha(#000, 0.2);
 }

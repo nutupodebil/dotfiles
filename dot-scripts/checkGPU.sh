@@ -1,2 +1,4 @@
+#!/bin/sh
+
 lspci -d ::03xx
 ls -l /dev/dri/by-path

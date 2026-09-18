@@ -51,13 +51,13 @@ saturation = 20
 # zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
 
 rofi.template           = 'colors-rofi.rasi'
-rofi.target             = '~/.config/rofi/wallust/colors-rofi.rasi'
+rofi.target             = '~/.config/rofi/colors/wallust-colors.rasi'
 
 swaync.template         = 'colors-swaync.css'
-swaync.target           = '~/.config/swaync/wallust/colors-swaync.css'
+swaync.target           = '~/.config/swaync/colors/wallust-colors.css'
 
 wlogout.template        = 'colors-wlogout.css'
-wlogout.target          = '~/.config/wlogout/wallust/colors-wlogout.css'
+wlogout.target          = '~/.config/wlogout/colors/wallust-colors.css'
 
 path_to_wall.template   = 'wllppr.conf'
 path_to_wall.target     = '~/.cache/wallust/wllppr.conf'

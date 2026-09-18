@@ -8,11 +8,16 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "wallust/colors-rofi.rasi"
-//@import                          "wallust/wallpaper.rasi"
+/* @import                          "colors/wallust-colors.rasi" */
+@import                          "colors/iris-colors.rasi"
 @import                          "fonts.rasi"
 
-//bg: @color0
+* {
+    selected: @accent;
+    background: @bg;
+    foreground: @fg;
+    background-alt: @surface; /* @color7 */
+}
 
 /*****----- Main Window -----*****/
 window {
@@ -29,8 +34,8 @@ window {
     padding:                     0px;
     border:                      2px solid;
     border-radius:               10px;
-    border-color:                @color8; /*@selected;*/
-    background-color:            rgba(0,0,0,0.5); /*@background;*/
+    border-color:                @selected;
+    background-color:            @window-bg; /* rgba(0,0,0,0.5) */
     
     /*
     @background;
@@ -46,8 +51,8 @@ mainbox {
     margin:                      0px;
     padding:                     30px;
     border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
-    border-color:                @color8; /*@selected;*/
+    border-radius:               10px; /* 0px 0px 0px 0px; */
+    border-color:                @selected;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
 }
@@ -60,9 +65,9 @@ inputbar {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               16px;
-    border-color:                @color8; /*@selected;*/
-    background-color:            @color1; /*@background-alt;*/
-    text-color:                  @color14; /*@foreground;*/
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
 }
 
@@ -70,8 +75,8 @@ prompt {
     enabled:                     true;
     padding:                     12px;
     border-radius:               16px;
-    background-color:            @color0; /*@selected;*/
-    text-color:                  @color14; /*@background;*/
+    background-color:            @selected;
+    text-color:                  @background;
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -108,16 +113,16 @@ listview {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @color8; /*@selected;*/
+    border-color:                @selected;
     background-color:            transparent;
-    text-color:                  @color14; /*@foreground;*/
+    text-color:                  @foreground;
     cursor:                      "default";
 }
 scrollbar {
     handle-width:                5px ;
-    handle-color:                @color8; /*@selected;*/
+    handle-color:                @selected;
     border-radius:               0px;
-    background-color:            @color1; /*@background-alt;*/
+    background-color:            @background-alt;
 }
 
 /*****----- Elements -----*****/
@@ -128,25 +133,25 @@ element {
     padding:                     5px;
     border:                      0px solid;
     border-radius:               16px;
-    border-color:                @color8; /*@selected;*/
-    background-color:            @color3; /*@background;*/
-    text-color:                  @color14; /*@foreground;*/
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            @color1; /*@background-alt;*/
-    text-color:                  @color14; /*@foreground;*/
+    background-color:            @background-alt;
+    text-color:                  @foreground;
 }
 element alternate.normal {
-    background-color:            @color1; /*@background-alt;*/
-    text-color:                  @color14; /*@foreground;*/
+    background-color:            @background-alt;
+    text-color:                  @foreground;
 }
 element selected.normal {
     border:                      0px 5px 0px 5px;
     border-radius:               16px;
-    border-color:                @color8; /*@selected;*/
-    background-color:            @color1; /*@background-alt;*/
-    text-color:                  @color15; /*@selected;*/
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @selected;
 }
 element-icon {
     padding:                     0px 0px 0px 10px;
@@ -156,6 +161,7 @@ element-icon {
     cursor:                      inherit;
 }
 element-text {
+    font:                        @font-bold;
     background-color:            transparent;
     text-color:                  inherit;
     highlight:                   inherit;
@@ -167,15 +173,15 @@ element-text {
 /*****----- Message -----*****/
 error-message {
     padding:                     15px;
-    border:                      2px solid;
-    border-radius:               16px;
-    border-color:                @color8; /*@selected;*/
-    background-color:            @color3; /*@background;*/
-    text-color:                  @color14; /*@foreground;*/
+    border:                      0px solid;
+    border-radius:               6px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @red;
 }
 textbox {
-    background-color:            @color3; /*@background;*/
-    text-color:                  @color14; /*@foreground;*/
+    background-color:            @background;
+    text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.0;
     highlight:                   none;
