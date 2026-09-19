@@ -3,6 +3,7 @@ Here is a list of required packages
 **pacman**:
 
 ```
+ly
 stow
 kitty
 vim
