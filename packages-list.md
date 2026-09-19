@@ -3,6 +3,7 @@ Here is a list of required packages
 **pacman**:
 
 ```
+stow
 kitty
 vim
 neovim             # nvim

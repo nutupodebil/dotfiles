@@ -3,7 +3,8 @@ These are my strange and perhaps silly dotfiles.
 All file and directory names that start with the prefix `dot-` correspond to files in your system’s home directory if you replace this prefix with `.` :
 for example, the `dot-scripts` directory corresponds to the `~/.scripts` directory.
 
-First, make sure you have git and stow installed. Otherwise, install them with:
+First, make sure you have git and stow installed (and make sure that you generally have all necessary packages listed in package-list.md).
+Otherwise, install them with:
 ```shell
 sudo pacman -S git stow
 ```
