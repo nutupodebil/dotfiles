@@ -2,7 +2,7 @@
 
 hl.monitor({
   output = "desc:Samsung Display Corp. ATNA60DL04-0",
-  mode = "2560x1600@240.00",
+  mode = "2560x1600@60.00",
   position = "0x0",
   scale = 1.6,
   vrr = 1,

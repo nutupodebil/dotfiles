@@ -22,7 +22,7 @@
   "modules-right": [
     "tray",
     "pulseaudio",
-    //"backlight",
+    "backlight",
     "battery",
     "network",
     "group/hardware",
@@ -115,6 +115,7 @@
       "default": [
         "",
         "",
+        "",
         ""
       ]
     },

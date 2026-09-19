@@ -16,7 +16,7 @@ configuration {
     selected: @accent;
     background: @bg;
     foreground: @fg;
-    background-alt: @surface; /* @color7 */
+    background-alt: @dim; /* @surface @color7 */
 }
 
 /*****----- Main Window -----*****/
