@@ -202,6 +202,8 @@ tooltip label {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
+    border-radius: 4px;
+
     background-color: @red; /*#eb4d4b;*/
     opacity: 0.8;
 }

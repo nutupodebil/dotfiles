@@ -19,6 +19,7 @@ rog-control-center
 wlogout
 waybar
 rofi
+nautilus
 swaync
 awww
 matugen
