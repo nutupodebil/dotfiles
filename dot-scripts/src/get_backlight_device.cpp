@@ -2,23 +2,18 @@
 #include <iostream>
 #include <string>
 int main(){
-    //std::ifstream f("/home/vldzn/backlight");
+    std::string home = std::getenv("HOME");
+
     std::string back_dev;
-    //std::getline(f, back_dev);
-    //f.close();
     std::cin >> back_dev;
 
-    std::ofstream hypr("/home/vldzn/.config/hypr/modules/backlight_device.lua");
+    std::ofstream hypr(home + "/.config/hypr/modules/backlight_device.lua");
     hypr << "mon_bright = '" << back_dev << "'";
     hypr.close();
 
-    //std::ofstream swaync("/home/vldzn/.config/swaync/backlight_device.json");
-    //swaync << '"' << "device" << '"' << ": " << '"' << back_dev << '"';
-    //swaync.close();
-    
-    std::ifstream swaync_conf_in("/home/vldzn/.config/swaync/config");
-    std::ofstream swaync_conf_out("/home/vldzn/.config/swaync/config.json");
-    
+    std::ifstream swaync_conf_in(home + "/.config/swaync/config");
+    std::ofstream swaync_conf_out(home + "/.config/swaync/config.json");
+
     std::string line;
     bool flag;
     while (getline(swaync_conf_in, line)){

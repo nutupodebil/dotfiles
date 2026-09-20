@@ -1,4 +1,4 @@
-Here is a list of required packages
+Here is a list of packages I have used in my **Arch** configuration
 
 **pacman**:
 

@@ -20,6 +20,19 @@ Next, go to the ~/.dotfiles directory and invoke stow with the following flags:
 stow --dotfiles .
 ```
 
-**! IMPORTANT !** `stow` will return an error if there are files (not symlinks) with the same names as the files in this repository in your home or ~/.config or ~/.scripts directories.
+**! IMPORTANT !** `stow` will return an error if there are files (not symlinks) with the same names as the files in this repository in your home or `~/.config` or `~/.scripts` directories.
 You can read more about GNU Stow by following the link: https://www.gnu.org/software/stow/manual/
 
+For the correct operation of the script `hypr-refresh.sh` (changes the monitor refresh rate),
+it is necessary to enable tracking changes in the `/var/lib/power-profiles-daemon/state.ini` file with:
+```shell
+systemctl --user daemon-reload
+systemctl --user enable --now hypr-refresh.path
+```
+
+It is also highly recommended to rebuild the `get_backlight_device` script yourself (the source code is in dot-scripts/src/).
+I used the following commands to compile:
+```shell
+cd ~/.dotfiles/dot-scripts
+clang++ --std=c++20 -O3 -fsanitize=address,undefined -Wall -Wextra -Werror ./src/get_backlight_device.cpp -o get_backlight_device
+```
