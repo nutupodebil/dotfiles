@@ -30,7 +30,7 @@ systemctl --user daemon-reload
 systemctl --user enable --now hypr-refresh.path
 ```
 
-It is also highly recommended to rebuild the `get_backlight_device` script yourself (the source code is in dot-scripts/src/).
+It is also highly recommended to rebuild the `get_backlight_device` script yourself (the source code is at `dot-scripts/src/` dir).
 I used the following commands to compile:
 ```shell
 cd ~/.dotfiles/dot-scripts

@@ -1,5 +1,6 @@
 .*\.git
 .*\.github
+.gitignore
 wallpapers
 README.md
 packages-list.md
