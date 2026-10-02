@@ -2,13 +2,15 @@
 {
   "layer": "top",
   "margin-bottom": -12,
-  "margin-top": 0,
+  "margin-top": -2,
   "margin-left": 6,
   "margin-right": 6,
   "height": 52,
   "spacing": -4,
   "reload_style_on_change": true,
-  //  GENERAL
+  
+    
+    //  GENERAL
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/language",
@@ -28,7 +30,9 @@
     "group/hardware",
     "custom/exit"
   ],
-  //  MODULES LEFT
+  
+
+    //  MODULES LEFT
   "hyprland/workspaces": {
     "format": "{}",
     "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e+1'})\"",
@@ -38,7 +42,9 @@
     }
   },
   "hyprland/language": {
-    "format": " {short}",
+    "format": " {}",
+    "format-en": "US",
+    "format-ru": "RU",
     "on-click": "hyprctl switchxkblayout current next"
   },
   "hyprland/window": {
@@ -46,18 +52,13 @@
     "format": "{initialTitle}",
     "icon-size": 20,
     "max-length": 30,
-    //"rewrite": {
-    //    "(.*) - Brave": "$1",
-    //    "(.*) - Chromium": "$1",
-    //    "(.*) - Brave Search": "$1",
-    //    "(.*) - Outlook": "$1",
-    //    "(.*) Microsoft Teams": "$1"
-    //},
     "separate-outputs": true,
     "tooltip": true,
     "tooltip-format": "{title}"
   },
-  //  MODUES CENTER
+  
+
+    //  MODUES CENTER
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -71,7 +72,6 @@
   },
   "clock": {
     "format": "{0:%H:%M} ┃ {0:%d %b %Y}",
-    //"timezone": "Europe/Kaliningrad", // "Europe/Moscow" "Europe/Kaliningrad"
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%d-%m-%Y}"
   },
@@ -95,7 +95,9 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-  //  MODULES RIGHT
+  
+
+    //  MODULES RIGHT
   "tray": {
     // "icon-size": 21,
     "spacing": 0
@@ -122,9 +124,7 @@
     "on-click": "pavucontrol"
   },
   "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent} {icon}", //"{percent}% {icon}",
-    //"format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format": "{percent} {icon}",
     "format-icons": [
       "🌑",
       "🌘",
@@ -145,10 +145,8 @@
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-plugged": "", //"{capacity}% ", // An empty format will hide the module
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": [
       "",
       "",
@@ -158,7 +156,6 @@
     ]
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
@@ -196,48 +193,13 @@
       "cpu",
       "memory",
       "temperature"
-    ] //, "hyprland/language", "power-profiles-daemon"]
+    ]
   },
   "custom/exit": {
     "format": "⏻",
-    "on-click": "wlogout -s", //"~/.scripts/wlogout.sh",
+    "on-click": "wlogout -s",
     "on-click-right": "hyprlock",
     "tooltip": true,
     "tooltip-format": "Power menu"
   },
-  /*
-    "bluetooth": {
-	"format-connected": "", //" conn",
-        "format-disabled": "",
-        "format-off": "",
-        "interval": 30,
-        "on-click": "blueman-manager",
-        "format-no-controller": ""
-    }
-    */
-  /*
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    */
-  /*
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    */
 }

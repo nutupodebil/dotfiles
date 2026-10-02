@@ -9,6 +9,11 @@ caching = true
 contrast = 0.25
 
 
+[templates.alacritty]
+input_path  = '~/.config/matugen/templates/alacritty-colors.toml'
+output_path = '~/.config/alacritty/colors.toml'
+
+
 [templates.kitty]
 input_path  = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/Matugen.conf'
@@ -119,10 +124,12 @@ output_path = '~/.config/zathura/zathurarc'
 
 [templates.zen-userchrome]
 input_path  = '~/.config/matugen/templates/zen-userchrome.css'
-output_path = '~/.zen/g6ysnhwn.Default (release)/chrome/zen-userChrome.css'
+output_path = '~/.zen/dl4j33pi.Default (release)/chrome/zen-userChrome.css'
 
 [templates.zen-usercontent]
 input_path  = '~/.config/matugen/templates/zen-usercontent.css'
-output_path = '~/.zen/g6ysnhwn.Default (release)/chrome/zen-userContent.css'
+output_path = '~/.zen/dl4j33pi.Default (release)/chrome/zen-userContent.css'
 
 
+
+post_hook = "mode=$(echo '{{mode}}' | tr '[:upper:]' '[:lower:]') && gsettings set org.gnome.desktop.interface color-scheme \"prefer-$mode\""

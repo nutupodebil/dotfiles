@@ -1,22 +1,18 @@
-Here is a list of packages I have used in my **Arch** configuration
-
-**pacman**:
+## Here is a list of packages I have used in my **Arch** configuration
+## **pacman**:
 
 ```
-ly
 stow
 kitty
 vim
 neovim             # nvim
 fastfetch
-power-profiles-daemon
 hyprland
 hypridle
 hyprlock
 hyprpm
-asusctl
-rog-control-center
-wlogout
+hyprshutdown
+xdg-desktop-portal-hyprland
 waybar
 rofi
 nautilus
@@ -30,18 +26,28 @@ qt5ct
 qt6ct
 gtk3
 gtk4
+
+# optional:
+ly
+power-profiles-daemon
+asusctl
+rog-control-center
 spotify-launcher   # spotify
 telegram-desktop
+steam
 ```
 
-**AUR**:
+## **AUR**:
 
 ```
 hyprmoncfg-bin     # hyprmoncfg
+wlogout
 waypaper
-iris-colors        # iris
-spicetify-cli      # spicetify
-vesktop
-amneziavpn-bin     # AmneziaVPN
+iris-colors        # Iris
+
+# optional:
+spicetify-cli      # Spicetify
+vesktop-bin        # Vesktop
 zen-browser-bin    # Zen Browser
+adwsteamgtk        # Adwaita-for-Steam
 ```

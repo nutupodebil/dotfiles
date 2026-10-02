@@ -3,10 +3,12 @@
 --
 
 --hl.env("XCURSOR_THEME", "KanadeHyprcursor_static")
-hl.env("XCURSOR_SIZE", "28")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("XCURSOR_SIZE", "22")
 
-hl.env("HYPRCURSOR_THEME", "KanadeHyprcursor_static")
-hl.env("HYPRCURSOR_SIZE", "28")
+--hl.env("HYPRCURSOR_THEME", "KanadeHyprcursor_static")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("HYPRCURSOR_SIZE", "22")
 
 hl.env("GDK_SCALE", "1.6")
 hl.env("GDK_BACKEND", "wayland,x11,*")

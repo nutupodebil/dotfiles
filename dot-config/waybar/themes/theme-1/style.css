@@ -54,7 +54,7 @@ tooltip label {
 #workspaces {
     margin: 10px 6px 10px 6px;
     padding: 0px 3px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 0px;
     
     background: @background; /*@surface*/
@@ -69,9 +69,9 @@ tooltip label {
 }
 
 #workspaces button {
-    margin: 4px 3px;
+    margin: 4px 4px;
     padding: 0px 5px;
-    border-radius: 8px;
+    border-radius: 10px;
 
     background-color: @dim; /*@color6;*/
     transition: all 0.2s ease-in-out;
@@ -84,7 +84,7 @@ tooltip label {
 }
 
 #workspaces button.active {
-    border-radius: 6px;
+    border-radius: 8px;
     min-width: 36px;
     transition: all 0.2s ease-in-out;
     

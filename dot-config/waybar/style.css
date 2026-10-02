@@ -54,7 +54,7 @@ tooltip label {
 #workspaces {
     margin: 10px 6px 10px 6px;
     padding: 0px 3px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 0px;
     
     background: @background; /*@surface*/
@@ -69,9 +69,9 @@ tooltip label {
 }
 
 #workspaces button {
-    margin: 4px 3px;
+    margin: 4px 4px;
     padding: 0px 5px;
-    border-radius: 8px;
+    border-radius: 10px;
 
     background-color: @dim; /*@color6;*/
     transition: all 0.2s ease-in-out;
@@ -84,7 +84,7 @@ tooltip label {
 }
 
 #workspaces button.active {
-    border-radius: 6px;
+    border-radius: 8px;
     min-width: 36px;
     transition: all 0.2s ease-in-out;
     
@@ -143,25 +143,12 @@ tooltip label {
     color: @foreground; /* @yellow; */
 }
 
-#time {
-    margin: 11px 6px 11px 6px;
-}
-
-#clock.simple {
-    padding: 1px 8px 0px 8px;
-    border-radius: 8px 0px 0px 8px;
-    
-    background-color: @foreground;
-    opacity: 1.0;
-
-    color: @background;
-    font-size: 20px;
-    font-weight: bold;
-}
+#clock,
 
 #clock {
+    margin: 11px 6px 11px 6px;
     padding: 1px 8px 0px 8px;
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 8px;
 
     background-color: @background; /*@color13;*/
     opacity: 1.0;
@@ -201,9 +188,10 @@ tooltip label {
 
 /*  TRAY  */
 #tray {
-    margin: 12px 2px 12px 6px;
+    margin: 12px 3px 12px 6px;
     padding-left: 0px; /* 2px; */
     padding-right: 0px; /* 2px; */
+    border-radius: 8px;
 
     background-color: transparent;  /*@background;*/
 }
@@ -224,13 +212,13 @@ tooltip label {
 #pulseaudio {
     margin: 12px 6px 12px 6px;
     padding: 2px 8px 0px 6px; /* 2px 6px 0px 6px; */
-    border-radius: 8px;
+    border-radius: 8px; /*15px;*/
 
     background-color: @background;
     opacity: 0.95;
 
     color: @foreground;
-    font-size: 16px;
+    font-size: 16px;    
 }
 
 #pulseaudio.muted {

@@ -8,9 +8,8 @@
 
 -- локали
 local mod = "SUPER"
-local terminal = "kitty"
+local terminal = "kitty"       --"alacritty"
 local fileManager = "nautilus" --"dolphin"
-local menu = "rofi -show drun -theme ~/.config/rofi/style.rasi" --"wofi --show drun"
 
 --  переменные окружения
 require("modules/env_vars")
@@ -40,8 +39,8 @@ require("modules/start")
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + C", hl.dsp.window.close())
 hl.bind(
-	mod .. " + CTRL + M",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
+  mod .. " + CTRL + M",
+  hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -61,9 +60,9 @@ hl.bind(mod .. " + SHIFT + up", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mod .. " + SHIFT + down", hl.dsp.window.swap({ direction = "down" }))
 
 for i = 1, 10 do
-	local key = i % 10
-	hl.bind(mod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+  local key = i % 10
+  hl.bind(mod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+  hl.bind(mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
