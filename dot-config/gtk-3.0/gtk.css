@@ -2,3 +2,8 @@
 @import url('libadwaita.css');
 @import url('libadwaita-tweaks.css');
 
+menu {
+    border-radius: 8px;
+    border: none;
+    background-clip: padding-box;
+}

@@ -1,0 +1,390 @@
+
+
+/*  COLORS  */
+
+@import "../../.cache/iris/colors-waybar.css";
+/*  full path is ~/.cache/iris/colors-waybar  */
+
+@define-color background @bg;
+@define-color foreground @fg;
+
+
+/*  GENERAL  */
+* {
+  /*font-family: "Fira Sans";*/
+  font-family: "Fira Sans Semibold", "Font Awesome 7 Free", FontAwesome; /*Roboto, Helvetica, Arial, sans-serif;*/
+  font-size: 12pt;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+}
+
+window#waybar {
+    margin: 6px 6px;
+    border-radius: 6px;
+
+    background-color: transparent;
+    border-bottom: 0px solid #ffffff;
+    transition-property: background-color;
+    transition-duration: 0.5s; 
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+
+
+/*  TOOLTIP  */
+tooltip {
+    margin: 2px;
+    padding: 4px;
+    border-radius: 8px;
+
+    background-color: @background;
+    opacity:0.95;
+}
+
+tooltip label {
+    color: @foreground;
+}
+
+
+
+/*  MODULES LEFT  */
+#workspaces {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 2px;
+    border-radius: 12px;
+    border: 0px;
+
+    background: @background; 
+    opacity: 0.95;
+}
+
+#workspaces button {
+    margin: 4px 4px;
+    padding: 0px 6px;
+    border-radius: 10px;
+    min-width: 20px;
+
+    background-color: @dim;
+    opacity: 0.75;
+    transition: all 0.2s linear;
+}
+
+#workspaces button.active {
+    padding: 0px 6px;
+    border-radius: 10px;
+    min-width: 40px;
+
+    background: @dim;
+    opacity: 1.0;
+    transition: all 0.2s linear;
+
+    color: @foreground;
+}
+
+#workspaces button:hover {
+    border-radius: 10px;
+
+    background: @dim;
+    opacity:0.7;
+
+    color: @surface; /* @fg */
+}
+
+#workspaces button:nth-child(1) {
+    padding: 0px 4px 0px 8px;
+}
+
+#workspaces button:not(.active) label {
+    opacity: 0;
+}
+
+#workspaces,
+#workspaces button,
+#workspaces button label {
+    min-height: 0;
+}
+
+#language {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 12px;
+
+    background-color: @background;
+    opacity: 1.0;
+
+    color: @dim; /* @accent; */
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+#window {
+    margin: 12px 6px 12px 6px;
+    padding: 1.6px 10px 0px 10px;
+    border-radius: 12px;
+
+    background: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-size: 14pt;
+    font-weight: normal;
+}
+
+
+
+/*  MODULES CENTER  */
+#power-profiles-daemon {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 12px;
+
+    background: @background;
+    opacity: 0.95;
+
+    color: @foreground; /* @yellow; */
+}
+
+#clock,
+
+#clock {
+    margin: 12px 6px 12px 6px;
+    padding: 1px 9px 0px 9px;
+    border-radius: 12px;
+
+    background-color: @background; 
+    opacity: 1.0;
+
+    color: @foreground;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#custom-notification {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 12px 0px 9px;
+    border-radius: 12px;
+
+    background: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-family: "NotoSansMono Nerd Font";
+}
+
+
+
+
+/*  MODULES RIGHT */
+/* .modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+} */
+
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#memory,
+#temperature,
+#cpu,
+
+/*  TRAY  */
+#tray {
+    margin: 12px 6px 12px 6px;
+    padding: 0px; /* 2px; */
+    border-radius: 12px;
+
+    background-color: transparent; 
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    border-radius: 6px;
+
+    background-color: @red; /*#eb4d4b;*/
+    opacity: 0.8;
+}
+
+#tray menu {
+    background-color: @background;
+    color: @foreground;
+}
+
+#tray menu menuitem {
+    margin: 2px 0px;
+    padding: 2px 0px;
+    border-radius: 8px;
+
+    background-color: @surface;
+}
+
+/*  PULSEAUDIO  */
+#pulseaudio {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 8px 0px 8px; 
+    border-radius: 12px; 
+
+    background-color: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-size: 16px;
+}
+
+#pulseaudio.muted {
+    padding: 0px 8px 0px 8px;
+
+    background-color: @background;
+
+    color: @foreground;
+}
+
+/*  BACKLIGHT  */
+#backlight {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 7px 0px 8px;
+    border-radius: 12px; 
+
+    background-color: @background;
+    opacity: 0.95;
+    
+    color: @foreground;
+    font-size: 16px;
+}
+
+/*  BATTERY  */
+#battery {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 8px 0px 8px;
+    border-radius: 12px; 
+
+    background-color: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-size: 16px; 
+}
+
+#battery.charging {
+    padding: 2px 14px 0px 8px
+}
+
+@keyframes blink {
+    to {
+        background-color: @yellow;
+        color: @foreground;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red; /*#f53c3c;*/
+
+    color: @foreground; 
+
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/*  NETWORK  */
+#network {
+    margin: 12px 6px 12px 6px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 12px; 
+
+    background-color: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+    font-size: 14px; 
+}
+
+#network.ethernet {
+    background-color: @background;
+
+    color: @foreground;
+}
+
+#network.wifi {
+    background-color: @background;
+
+    color: @foreground;
+}
+
+#network {
+    background-color: @background;
+}
+
+#network.disconnected {
+    background-color: @red;
+}
+
+/*  HARDWARE  */
+#memory,#temperature{ 
+    margin: 12px 0px 12px 0px;
+    padding: 2px 0px 0px 0px;
+
+    background-color: @background;
+    opacity: 1;
+
+    font-size:15px;
+}
+#memory {
+    margin-left: 6px;
+    margin-right: 0px;
+    padding-left: 8px;
+    padding-right: 2px;
+    border-radius: 12px 0px 0px 12px;
+
+    color: @accent;
+}
+#temperature{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 0px 0px 0px 0px;
+
+    color: @yellow;
+}
+#cpu {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 8px 0px 8px;
+    border-radius: 12px;
+
+    background: @background;
+    opacity: 0.95;
+
+    color: @foreground;
+}
+
+#cpu:hover {
+    margin-left: 0px;
+    border-radius: 0px 12px 12px 0px;
+}
+
+/*  CUSTOM EXIT  */
+#custom-exit {
+    margin: 12px 6px 12px 6px;
+    padding: 2px 6px 0px 6px;
+    border-radius: 12px;
+
+    background-color: @background;
+    opacity: 1.0;
+
+    color: @red; 
+    font-size:20px;
+}
+
+
+
+

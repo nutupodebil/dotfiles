@@ -1,0 +1,208 @@
+
+/*****----- Configuration -----*****/
+configuration {
+  show-icons: true;
+}
+
+/*****----- Global Properties -----*****/
+@import                          "colors/iris-colors.rasi"
+@import                          "fonts.rasi"
+
+* {
+    selected: @accent;
+    background: @bg;
+    foreground: @fg;
+    background-alt: @dim;
+}
+
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       600px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    background-color:            @window-bg;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-color:                @selected;
+    border-radius:               10px;
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               10px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px 0px 2px 0px;
+    border-radius:               0px;
+    background-color:            @background;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     15px;
+    border:                      0px 2px 0px 0px;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+entry {
+    enabled:                     true;
+    padding:                     15px;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "";
+    placeholder-color:           inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       3;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    border-radius:               0px;
+    background-color:            @foreground;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    orientation: vertical;
+    border-radius: 0px;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     8px 15px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+element normal.normal {
+}
+element normal.urgent {
+}
+element normal.active {
+}
+element selected.normal {
+  background-color: @foreground;
+  text-color: @background-alt;
+}
+element selected.urgent {
+}
+element selected.active {
+}
+element alternate.normal {
+}
+element alternate.urgent {
+}
+element alternate.active {
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        128px;
+    cursor:                      inherit;
+}
+element-text {
+    enable: false;
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.0;
+    horizontal-align:            0.5;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled:                     false;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+button {
+    padding:                     10px;
+    background-color:            @background;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+button selected {
+}
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+textbox {
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+    blink:                       true;
+    markup:                      true;
+}
+error-message {
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+}

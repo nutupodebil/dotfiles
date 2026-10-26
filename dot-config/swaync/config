@@ -1,5 +1,4 @@
 {
-  "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
   "cssPriority": "user",
@@ -69,7 +68,8 @@
     },
     "volume": {
       "label": "󰕾",
-      "show-per-app": true
+      "show-per-app": true,
+      "show-per-app-icon": true
     },
     "backlight": {
       "label": "󰍹",

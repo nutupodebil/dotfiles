@@ -8,7 +8,6 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-/* @import                          "colors/wallust-colors.rasi" */
 @import                          "colors/iris-colors.rasi"
 @import                          "fonts.rasi"
 
@@ -149,9 +148,9 @@ element alternate.normal {
 element selected.normal {
     border:                      0px 5px 0px 5px;
     border-radius:               16px;
-    border-color:                @selected;
+    border-color:                @surface; /*@selected;*/
     background-color:            @background-alt;
-    text-color:                  @selected;
+    text-color:                  @surface; /*@selected;*/
 }
 element-icon {
     padding:                     0px 0px 0px 10px;

@@ -1,16 +1,14 @@
 // -*- mode: jsonc -*-
 {
   "layer": "top",
-  "margin-bottom": -12,
+  "margin-bottom": -10,
   "margin-top": -2,
   "margin-left": 6,
   "margin-right": 6,
   "height": 52,
   "spacing": -4,
   "reload_style_on_change": true,
-  
-    
-    //  GENERAL
+  //  GENERAL
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/language",
@@ -30,11 +28,17 @@
     "group/hardware",
     "custom/exit"
   ],
-  
-
-    //  MODULES LEFT
+  //  MODULES LEFT
   "hyprland/workspaces": {
-    "format": "{}",
+    "format": "<span size='small'>{icon}</span>",
+    "format-icons": {
+      "1": " ",
+      "2": "",
+      "3": " ",
+      "4": "",
+      "5": "",
+      "default": ""
+    },
     "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e+1'})\"",
     "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e-1'})\"",
     "persistent-workspaces": {
@@ -43,8 +47,9 @@
   },
   "hyprland/language": {
     "format": " {}",
-    "format-en": "US",
-    "format-ru": "RU",
+    "format-en": "en",
+    "format-ru": "ru",
+    "format-": "ru",
     "on-click": "hyprctl switchxkblayout current next"
   },
   "hyprland/window": {
@@ -56,9 +61,7 @@
     "tooltip": true,
     "tooltip-format": "{title}"
   },
-  
-
-    //  MODUES CENTER
+  //  MODUES CENTER
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -95,9 +98,7 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-  
-
-    //  MODULES RIGHT
+  //  MODULES RIGHT
   "tray": {
     // "icon-size": 21,
     "spacing": 0
@@ -124,7 +125,7 @@
     "on-click": "pavucontrol"
   },
   "backlight": {
-    "format": "{percent} {icon}",
+    "format": "{percent}% {icon}",
     "format-icons": [
       "🌑",
       "🌘",
@@ -144,7 +145,7 @@
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
+    "format-charging": "{capacity}% ",
     "format-plugged": "", //"{capacity}% ", // An empty format will hide the module
     "format-alt": "{time} {icon}",
     "format-icons": [
@@ -157,10 +158,10 @@
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "cpu": {
@@ -185,7 +186,7 @@
   "group/hardware": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 300,
+      "transition-duration": 200,
       "children-class": "not-memory",
       "transition-left-to-right": false
     },

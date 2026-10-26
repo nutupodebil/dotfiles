@@ -31,9 +31,9 @@ hl.config({
     inactive_opacity = 0.5,
     shadow = {
       enabled = true,
-      range = 4,
-      render_power = 3,
-      color = 0xee1a1a1a,
+      range = 12,
+      render_power = 4,
+      color = 0xee1a1a1a, --bg,
     },
     blur = {
       enabled = true,
@@ -66,7 +66,7 @@ hl.config({
 
   input = {
     kb_layout = "us, ru",
-    kb_variant = ",mac",
+    kb_variant = ",winkeys", --",mac"
     kb_options = "grp:win_space_toggle",
     follow_mouse = 1,
     sensitivity = 0,

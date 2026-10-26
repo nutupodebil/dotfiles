@@ -75,7 +75,7 @@ configuration {
 	display-filebrowser: "Files";
 
 	/*---------- Misc setting ----------*/
-	terminal: "rofi-sensible-terminal";
+	terminal: "kitty";
 	font: "Mono 12";
 	sort: false;
 	threads: 0;

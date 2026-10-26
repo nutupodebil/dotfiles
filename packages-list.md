@@ -3,6 +3,7 @@
 
 ```
 stow
+clang
 kitty
 vim
 neovim             # nvim
@@ -26,6 +27,7 @@ qt5ct
 qt6ct
 gtk3
 gtk4
+zip
 
 # optional:
 ly
@@ -42,7 +44,6 @@ steam
 ```
 hyprmoncfg-bin     # hyprmoncfg
 wlogout
-waypaper
 iris-colors        # Iris
 
 # optional:

@@ -3,10 +3,10 @@ import = ["colors.toml"]
 live_config_reload = true
 
 [window]
-padding = { x = 18, y = 16}
+padding = { x = 24, y = 22}
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font Mono" }
-bold = { style = "Extra Bold" }
-italic = { style = "Extra Bold Italic" }
-size = 13.0
+bold = { family = "JetBrainsMono Nerd Font Mono Extra Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono Extra Bold Italic" }
+size = 14.0

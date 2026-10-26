@@ -1,1 +1,0 @@
-/home/vldzn/.dotfiles/dot-config/hyprmoncfg/profiles/battery.lua

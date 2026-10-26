@@ -3,8 +3,30 @@
 --
 
 local mod = "SUPER"
-require("modules/backlight_device")
 local menu = "rofi -show drun -theme ~/.config/rofi/style.rasi"
+
+require("modules/backlight_device")
+
+hl.bind(
+  mod .. " + CTRL + left",
+  hl.dsp.window.resize({ activewindow, x = -20, y = 0, relative = true }),
+  { repeating = true }
+)
+hl.bind(
+  mod .. " + CTRL + right",
+  hl.dsp.window.resize({ activewindow, x = 20, y = 0, relative = true }),
+  { repeating = true }
+)
+hl.bind(
+  mod .. " + CTRL + up",
+  hl.dsp.window.resize({ activewindow, x = 0, y = -20, relative = true }),
+  { repeating = true }
+)
+hl.bind(
+  mod .. " + CTRL + down",
+  hl.dsp.window.resize({ activewindow, x = 0, y = 20, relative = true }),
+  { repeating = true }
+)
 
 hl.bind(
   "XF86AudioRaiseVolume",
@@ -44,13 +66,14 @@ hl.bind("XF86PowerOff", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })
 hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
 hl.bind(mod .. " + SHIFT + W", hl.dsp.exec_cmd("pkill -SIGUSR2 waybar"))
 
-hl.bind(mod .. " + W", hl.dsp.exec_cmd("waypaper")) --waypaper --backend awww --folder /home/vldzn/Pictures/wallpapers --random >> /dev/null"))
+hl.bind(mod .. " + W", hl.dsp.exec_cmd("pkill rofi || sh ~/.config/rofi/scripts/wallpaper-menu.sh"))
 hl.bind(mod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd(menu .. " || pkill rofi"))
-hl.bind(mod .. " + L", hl.dsp.exec_cmd("wlogout -s || pkill wlogout"))
+hl.bind(mod .. " + L", hl.dsp.exec_cmd("pkill wlogout || wlogout -s"))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 
-hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+--hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+hl.bind("SUPER + SHIFT + S", hl.plugin.hyprcapture.open)
 
 hl.bind(mod .. " + G", function()
   hl.plugin.hyprexpo.expo("toggle")

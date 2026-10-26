@@ -1,14 +1,14 @@
 #!/bin/sh
 
-
 # creating config dirs in ~/.config
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/btop
 mkdir -p ~/.config/cava
 mkdir -p ~/.config/fastfetch
+mkdir -p ~/.config/fish
 mkdir -p ~/.config/gtk-3.0
 mkdir -p ~/.config/gtk-4.0
-mkdir -p ~/.config/hypr
+mkdir -p ~/.config/hypr/monitor-profiles
 mkdir -p ~/.config/hyprmoncfg/profiles
 mkdir -p ~/.config/iris
 mkdir -p ~/.config/kitty
@@ -28,7 +28,10 @@ mkdir -p ~/.config/wlogout/colors
 
 
 # installing all necessary packages
+# from pacman
+sudo pacman -Syu
 sudo pacman -S --needed stow \
+  clang \
   kitty \
   vim \
   neovim \
@@ -51,13 +54,29 @@ sudo pacman -S --needed stow \
   qt5ct \
   qt6ct \
   gtk3 \
-  gtk4
+  gtk4 \
+  zip
 
+# install yay
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si
+
+# from AUR
 yay -S --needed hyprmoncfg-bin \
   wlogout \
-  waypaper \
   iris-colors
 
 
 # rebuilding the get_backlight_device script
 clang++ --std=c++20 -O3 -fsanitize=address,undefined -Wall -Wextra -Werror ~/.dotfiles/dot-scripts/src/get_backlight_device.cpp -o ~/.dotfiles/dot-scripts/get_backlight_device
+
+
+# adding HyprCapture and hyprexpo plugins
+hyprpm update
+hyprpm add https://github.com/gfhdhytghd/HyprCapture
+hyprpm enable hyprcapture
+hyprpm add https://github.com/sandwichfarm/hyprexpo
+hyprpm enable hyprexpo
+hyprpm reload
+
+
+
