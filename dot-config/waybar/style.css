@@ -11,8 +11,7 @@
 
 /*  GENERAL  */
 * {
-  /*font-family: "Fira Sans";*/
-  font-family: "Fira Sans Semibold", "Font Awesome 7 Free", FontAwesome; /*Roboto, Helvetica, Arial, sans-serif;*/
+  font-family: "Fira Sans Semibold", "Font Awesome 7 Free", FontAwesome;
   font-size: 12pt;
   font-weight: bold;
   border: none;
@@ -95,7 +94,11 @@ tooltip label {
 }
 
 #workspaces button:nth-child(1) {
-    padding: 0px 4px 0px 8px;
+    padding: 0px 3.4px 0.4px 8.6px;
+}
+
+#workspaces button:nth-child(3) {
+    padding: 0px 4px 0.6px 8px;
 }
 
 #workspaces button:not(.active) label {

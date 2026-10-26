@@ -13,6 +13,9 @@ if status is-interactive
     abbr -a ls lsd
     abbr -a lt lsd --tree
     abbr -a cat bat
+
+    abbr -a psyu sudo pacman -Syu
+    abbr -a ysyu yay -Syu
 end
 
 #function starship_transient_prompt_func

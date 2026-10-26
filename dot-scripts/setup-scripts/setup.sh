@@ -26,6 +26,9 @@ mkdir -p ~/.config/waybar
 mkdir -p ~/.config/waypaper
 mkdir -p ~/.config/wlogout/colors
 
+mkdir -p ~/.local/share/icons
+mkdir -p ~/.local/share/fonts
+
 
 # installing all necessary packages
 # from pacman
