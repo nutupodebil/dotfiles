@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # installing optional packages
 # from pacman
-sudo pacman -S --needed ly \
+sudo pacman -Syu --needed ly \
   power-profiles-daemon \
   asusctl \
   rog-control-center \
@@ -11,7 +11,7 @@ sudo pacman -S --needed ly \
   steam
 
 # from AUR
-yay -S --needed spicetify-cli \
+yay -Syu --needed spicetify-cli \
   vesktop-bin \
   zen-browser-bin \
   adwsteamgtk

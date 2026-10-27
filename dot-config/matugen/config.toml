@@ -9,11 +9,6 @@ caching = true
 contrast = 0.25
 
 
-[templates.alacritty]
-input_path  = '~/.config/matugen/templates/alacritty-colors.toml'
-output_path = '~/.config/alacritty/colors.toml'
-
-
 [templates.kitty]
 input_path  = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/Matugen.conf'
@@ -121,9 +116,10 @@ input_path  = '~/.config/matugen/templates/vscode-colors.json'
 output_path = '~/.cache/matugen/vscode-colors.json'
 
 
-#[templates.zathura]
-#input_path  = '~/.config/matugen/templates/zathura-colors'
-#output_path = '~/.config/zathura/zathurarc'
+[templates.zellij]
+input_path  = '~/.config/matugen/templates/zellij-colors.kdl'
+output_path = '~/.config/zellij/themes/matugen.kdl'
+post_hook   = 'touch ~/.config/zellij/config.kdl'
 
 
 [templates.zen-userchrome]
@@ -136,6 +132,7 @@ output_path = '~/.zen/dl4j33pi.Default (release)/chrome/zen-userContent.css'
 
 
 
-post_hook = "mode=$(echo '{{mode}}' | tr '[:upper:]' '[:lower:]') && gsettings set org.gnome.desktop.interface color-scheme \"prefer-$mode\" && asusctl aura effect static -c {{colors.primary.default.hex_stripped}}"
+# automatic theme switching
+post_hook   = "mode=$(echo '{{mode}}' | tr '[:upper:]' '[:lower:]') && gsettings set org.gnome.desktop.interface color-scheme \"prefer-$mode\" && asusctl aura effect static -c {{colors.primary.default.hex_stripped}}"
 
 

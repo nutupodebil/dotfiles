@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 HYPRLAND_DEVICE="asuf1209:00-2808:0219-touchpad"
 

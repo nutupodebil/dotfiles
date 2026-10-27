@@ -32,7 +32,7 @@
   "hyprland/workspaces": {
     "format": "<span size='small'>{icon}</span>",
     "format-icons": {
-      "1": "<span font='sketchybar-app-font'>:zen_browser:</span>", //" ",
+      "1": " ", //"<span font='sketchybar-app-font'>:zen_browser:</span>",
       "2": "",
       "3": "<span font='sketchybar-app-font'>:telegram:</span>", //" ",
       "4": "",

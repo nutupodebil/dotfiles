@@ -16,6 +16,9 @@ if status is-interactive
 
     abbr -a psyu sudo pacman -Syu
     abbr -a ysyu yay -Syu
+
+    abbr -a pss pacman -Ss
+    abbr -a yss yay -Ss
 end
 
 #function starship_transient_prompt_func

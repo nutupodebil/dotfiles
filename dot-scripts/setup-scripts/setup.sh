@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # creating config dirs in ~/.config
 mkdir -p ~/.config/alacritty
@@ -25,15 +25,14 @@ mkdir -p ~/.config/vesktop
 mkdir -p ~/.config/waybar
 mkdir -p ~/.config/waypaper
 mkdir -p ~/.config/wlogout/colors
+mkdir -p ~/.config/zellij
 
 mkdir -p ~/.local/share/icons
 mkdir -p ~/.local/share/fonts
 
-
 # installing all necessary packages
 # from pacman
-sudo pacman -Syu
-sudo pacman -S --needed stow \
+sudo pacman -Syu --needed stow \
   clang \
   kitty \
   vim \
@@ -61,17 +60,15 @@ sudo pacman -S --needed stow \
   zip
 
 # install yay
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si
+sudo pacman -Syu --needed git base-devel && git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si
 
 # from AUR
-yay -S --needed hyprmoncfg-bin \
+yay -Syu --needed hyprmoncfg-bin \
   wlogout \
   iris-colors
 
-
 # rebuilding the get_backlight_device script
 clang++ --std=c++20 -O3 -fsanitize=address,undefined -Wall -Wextra -Werror ~/.dotfiles/dot-scripts/src/get_backlight_device.cpp -o ~/.dotfiles/dot-scripts/get_backlight_device
-
 
 # adding HyprCapture and hyprexpo plugins
 hyprpm update
@@ -80,6 +77,3 @@ hyprpm enable hyprcapture
 hyprpm add https://github.com/sandwichfarm/hyprexpo
 hyprpm enable hyprexpo
 hyprpm reload
-
-
-
