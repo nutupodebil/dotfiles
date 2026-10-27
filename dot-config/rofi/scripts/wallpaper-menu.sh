@@ -14,13 +14,18 @@ find "$wallpaper_dir" -type f \
   while IFS= read -r selected_wallpaper; do
     if [[ -n "$selected_wallpaper" ]]; then
       image="$wallpaper_dir/$selected_wallpaper"
+
+      # setting the wallpaper with awww or hyprpaper
       awww img "$wallpaper_dir/$selected_wallpaper" --transition-type=any --transition-duration=2 --transition-fps=90
       #hyprctl hyprpaper wallpaper "$monitor, $image, fill"
+
       ln -sf $image ~/.cache/matugen/current-wallpaper.jpg
-      ln -sf ~/.cache/iris/colors-rofi.rasi ~/.config/rofi/colors/iris-colors.rasi
-      ln -sf ~/.cache/iris/colors-waybar.css ~/.config/swaync/colors/iris-colors.css
-      ln -df ~/.cache/iris/colors-waybar.css ~/.config/wlogout/colors/iris-colors.css
+
       iris --dark -1 $image
+      [ ! -f ~/.config/rofi/colors/iris-colors.rasi ] && ln -sf ~/.cache/iris/colors-rofi.rasi ~/.config/rofi/colors/iris-colors.rasi
+      [ ! -f ~/.config/swaync/colors/iris-colors.css ] && ln -sf ~/.cache/iris/colors-waybar.css ~/.config/swaync/colors/iris-colors.css
+      [ ! -f ~/.config/wlogout/colors/iris-colors.css ] && ln -sf ~/.cache/iris/colors-waybar.css ~/.config/wlogout/colors/iris-colors.css
+
       swaync-client -rs
       matugen image $image --source-color-index 0 -t scheme-smart -m smart --lightness-light -0.1 --show-colors
       pkill -SIGUSR2 waybar
