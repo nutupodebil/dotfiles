@@ -83,15 +83,16 @@ sh ~/.dotfiles/dot-scripts/setup-scripts/compile-font.sh
 *Note*: link to the repository with the font is in the "links" section below.
 
 ### 2. `hypr-refresh.sh` script
-For the correct operation of the script `hypr-refresh.sh` (changes the monitor refresh rate),
-it is necessary to enable tracking changes in the `/var/lib/power-profiles-daemon/state.ini` file with:
+For the correct operation of the script `hypr-refresh.sh` (changes the monitor refresh rate), \
+it is necessary to change the `MONITOR` variable in `hypr-refresh.sh` to the correct name of your monitor in the system \
+and enable tracking changes in the `/var/lib/power-profiles-daemon/state.ini` file with:
 ```shell
 systemctl --user daemon-reload
 systemctl --user enable --now hypr-refresh.path
 ```
 
 ### 3. `get_backlight_device` script
-It is also highly recommended to rebuild the `get_backlight_device` script yourself (the source code is at `dot-scripts/src/` dir).
+It is also highly recommended to rebuild the `get_backlight_device` script yourself (the source code is at `dot-scripts/src/` dir). \
 I used the following commands to compile:
 ```shell
 cd ~/.dotfiles/dot-scripts
