@@ -116,12 +116,6 @@ input_path  = '~/.config/matugen/templates/vscode-colors.json'
 output_path = '~/.cache/matugen/vscode-colors.json'
 
 
-[templates.zellij]
-input_path  = '~/.config/matugen/templates/zellij-colors.kdl'
-output_path = '~/.config/zellij/themes/matugen.kdl'
-post_hook   = 'touch ~/.config/zellij/config.kdl'
-
-
 [templates.zen-userchrome]
 input_path  = '~/.config/matugen/templates/zen-userchrome.css'
 output_path = '~/.zen/dl4j33pi.Default (release)/chrome/zen-userChrome.css'
