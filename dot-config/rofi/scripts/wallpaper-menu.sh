@@ -17,6 +17,7 @@ find "$wallpaper_dir" -type f \
 
       # setting the wallpaper with awww or hyprpaper
       awww img "$wallpaper_dir/$selected_wallpaper" --transition-type=any --transition-duration=2 --transition-fps=90
+      # if you are using hyprpaper, don’t forget to uncomment its launch in dot-config/hypr/modules/start.lua
       #hyprctl hyprpaper wallpaper "$monitor, $image, fill"
 
       ln -sf $image ~/.cache/matugen/current-wallpaper.jpg

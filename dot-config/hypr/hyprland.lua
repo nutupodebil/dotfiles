@@ -80,3 +80,8 @@ require("modules/window_rules")
 
 --  layer rules
 require("modules/layer_rules")
+
+--  workspace rules
+require("modules/workspace_rules")
+
+

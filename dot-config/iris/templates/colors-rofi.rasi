@@ -7,7 +7,7 @@
     red: {red};
     green: {green};
     yellow: {yellow};
-    window-bg: rgba({bg.rgb}, 0.6);
+    window-bg: rgba({bg.rgb}, 0.7);
     color0: {color0};
     color1: {color1};
     color2: {color2};
