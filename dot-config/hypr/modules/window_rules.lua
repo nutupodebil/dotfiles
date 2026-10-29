@@ -1,5 +1,5 @@
 --
---  правила для окон
+--  window rules
 --
 
 hl.window_rule({

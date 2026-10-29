@@ -252,7 +252,7 @@ tooltip label {
 /*  BACKLIGHT  */
 #backlight {
     margin: 12px 6px 12px 6px;
-    padding: 2px 7px 0px 8px;
+    padding: 2px 9px 0px 9px;
     border-radius: 12px; 
 
     background-color: @background;
@@ -301,7 +301,7 @@ tooltip label {
 /*  NETWORK  */
 #network {
     margin: 12px 6px 12px 6px;
-    padding: 0px 8px 0px 8px;
+    padding: 0px 9px 0px 9px;
     border-radius: 12px; 
 
     background-color: @background;
@@ -321,10 +321,6 @@ tooltip label {
     background-color: @background;
 
     color: @foreground;
-}
-
-#network {
-    background-color: @background;
 }
 
 #network.disconnected {

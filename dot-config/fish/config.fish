@@ -7,6 +7,7 @@ if status is-interactive
     #fastfetch 
 
     #set -U tide_character_vi_icon_default '❯'
+    set -U fish_user_paths ~/.local/bin
 
     abbr -a ff fastfetch
     abbr -a la lsd -Al

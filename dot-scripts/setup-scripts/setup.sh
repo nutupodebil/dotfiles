@@ -77,3 +77,7 @@ hyprpm enable hyprcapture
 hyprpm add https://github.com/sandwichfarm/hyprexpo
 hyprpm enable hyprexpo
 hyprpm reload
+
+# installing buttertodo
+git clone https://justaguy.dev/drew/buttertodo.git ~/buttertodo
+bash ~/buttertodo/install.sh

@@ -1,41 +1,42 @@
 --
---  конфиг ХАЙПЕР хуйни
+--  Hyprland config
 --
 
---  логи
+--  logs
 --debug.disable_logs = false
 --debug.enable_stdout_logs = 1
 
--- локали
+--  some vars
 local mod = "SUPER"
 local terminal = "kitty"       --"alacritty"
 local fileManager = "nautilus" --"dolphin"
 
---  переменные окружения
+--  environment variables
 require("modules/env_vars")
 
---  моники
+--  monitors
 require("modules/monitors")
 
---  это база
+--  basics
 require("modules/base")
 
---  плагины
-require("modules/plugins")
+--  plugins
+require("modules/plugins/hyprcapture")
+--require("modules/plugins/hyprexpo")
 
---  девайсы
+--  devices
 require("modules/devices")
 
---  жесты
+--  gestures
 require("modules/gestures")
 
---  анимации
+--  animations
 require("modules/animations")
 
---  автозапуск
+--  autostart
 require("modules/start")
 
---  самые базовые бинды
+--  main keybindings
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + C", hl.dsp.window.close())
 hl.bind(
@@ -71,11 +72,11 @@ hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
---  остальные бинды
+--  other keybindings
 require("modules/keybinds")
 
---  правила окон
+--  window rules
 require("modules/window_rules")
 
---  правила слоев
+--  layer rules
 require("modules/layer_rules")

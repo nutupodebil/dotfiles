@@ -1,8 +1,8 @@
 --
---  основа
+--  main settings
 --
 
---  цвета
+--  importing Iris colors
 require("~/.cache/iris/colors-hyprland")
 
 hl.config({

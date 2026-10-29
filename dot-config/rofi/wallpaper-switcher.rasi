@@ -123,6 +123,7 @@ element {
     spacing:                     10px;
     margin:                      0px;
     padding:                     8px 15px;
+    border-radius:               8px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;

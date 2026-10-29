@@ -1,5 +1,5 @@
 --
---  переменные среды
+--  environment variables
 --
 
 --hl.env("XCURSOR_THEME", "KanadeHyprcursor_static")

@@ -1,5 +1,5 @@
 --
---  правила для слоев
+--  layer rules
 --
 
 hl.layer_rule({
