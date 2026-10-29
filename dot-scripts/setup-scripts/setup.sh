@@ -18,14 +18,11 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/qt5ct
 mkdir -p ~/.config/qt6ct
 mkdir -p ~/.config/rofi/colors
-mkdir -p ~/.config/spicetify
 mkdir -p ~/.config/swaync/colors
 mkdir -p ~/.config/systemd
-mkdir -p ~/.config/vesktop
 mkdir -p ~/.config/waybar
 mkdir -p ~/.config/waypaper
 mkdir -p ~/.config/wlogout/colors
-mkdir -p ~/.config/zellij
 
 mkdir -p ~/.local/share/icons
 mkdir -p ~/.local/share/fonts
