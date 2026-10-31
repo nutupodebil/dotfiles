@@ -1,5 +1,5 @@
 [Unit]
-Description=Update Hyprland refresh rate based on power profile
+Description=Update monitor refresh rate based on power profile
 
 [Service]
 Type=oneshot

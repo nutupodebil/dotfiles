@@ -3,12 +3,11 @@
 
 
 window {
-    font-family: JetBrainsMono Nerd Font Propo;/* Fira Code Medium; */
+    font-family: JetBrainsMono Nerd Font Propo;
     font-size: 16pt;
-    color:  @fg; /* @foreground */
-    background-color: alpha(@bg, 0.5); /* rgba(24, 27, 32, 0.2) */
-
-} 
+    color:  @fg;
+    background-color: alpha(@dim, 0.6); /* rgba(24, 27, 32, 0.2) */
+}
 
 button {
     background-repeat: no-repeat;
@@ -22,15 +21,18 @@ button {
     margin: 10px;
 }
 
-button:focus {
-    box-shadow: none;
-    background-size : 20%;
+button:focus{
+    border: none;
+    outline: none;
+    outline-style: none;
+    outline-width: 0;
 }
+
 
 button:hover {
     background-size: 30%;
     box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
-    background-color: @accent; /* @color6 */
+    background-color: @accent;
     color: transparent;
     transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
 }
@@ -38,42 +40,49 @@ button:hover {
 #shutdown {
     background-image: image(url("./icons/power.png"));
 }
+/* #shutdown:focus, */
 #shutdown:hover {
-  background-image: image(url("./icons/power-hover.png"));
+    background-image: image(url("./icons/power-hover.png"));
 }
 
 #logout {
     background-image: image(url("./icons/logout.png"));
-
 }
+/* #logout:focus, */
 #logout:hover {
-  background-image: image(url("./icons/logout-hover.png"));
+    background-image: image(url("./icons/logout-hover.png"));
 }
 
 #reboot {
     background-image: image(url("./icons/restart.png"));
 }
+/* #reboot:focus, */
 #reboot:hover {
-  background-image: image(url("./icons/restart-hover.png"));
+    background-image: image(url("./icons/restart-hover.png"));
 }
 
 #lock {
     background-image: image(url("./icons/lock.png"));
 }
+/* #lock:focus, */
 #lock:hover {
-  background-image: image(url("./icons/lock-hover.png"));
+    background-image: image(url("./icons/lock-hover.png"));
 }
 
 #hibernate {
     background-image: image(url("./icons/hibernate.png"));
 }
+/* #hibernate:focus, */
 #hibernate:hover {
-  background-image: image(url("./icons/hibernate-hover.png"));
+    background-image: image(url("./icons/hibernate-hover.png"));
 }
 
 #suspend {
     background-image: image(url("./icons/sleep.png"));
 }
+/* #suspend:focus, */
 #suspend:hover {
     background-image: image(url("./icons/sleep-hover.png"));
 }
+
+

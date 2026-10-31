@@ -54,7 +54,8 @@ sudo pacman -Syu --needed stow \
   qt6ct \
   gtk3 \
   gtk4 \
-  zip
+  zip \
+  nerd-fonts
 
 # install yay
 sudo pacman -Syu --needed git base-devel && git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si

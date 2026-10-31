@@ -197,10 +197,11 @@ tooltip label {
 /*  TRAY  */
 #tray {
     margin: 12px 6px 12px 6px;
-    padding: 0px; /* 2px; */
+    padding: 0px 8px 0px 8px;
     border-radius: 12px;
 
-    background-color: transparent; 
+    background-color: @background;
+    opacity: 0.95;
 }
 
 #tray > .passive {

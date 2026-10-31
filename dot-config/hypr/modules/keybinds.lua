@@ -3,6 +3,7 @@
 --
 
 local mod = "SUPER"
+local file_manager = "nautilus"
 local menu = "rofi -show drun -theme ~/.config/rofi/style.rasi"
 
 
@@ -80,6 +81,8 @@ hl.bind(mod .. " + SHIFT + W", hl.dsp.exec_cmd("pkill -SIGUSR2 waybar"))
 
 
 --  some useful binds
+hl.bind(mod .. " + E", hl.dsp.exec_cmd("pkill " .. file_manager .. " || " .. file_manager))
+
 hl.bind(mod .. " + W", hl.dsp.exec_cmd("pkill rofi || bash ~/.config/rofi/scripts/wallpaper-menu.sh"))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd(menu .. " || pkill rofi"))
 hl.bind(mod .. " + SHIFT + N",

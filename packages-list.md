@@ -28,6 +28,7 @@ qt6ct
 gtk3
 gtk4
 zip
+nerd-fonts
 
 # optional:
 ly

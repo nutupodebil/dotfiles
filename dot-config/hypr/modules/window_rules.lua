@@ -105,6 +105,8 @@ hl.window_rule({
   match = { class = "AmneziaVPN" },
   center = true,
   size = { 360, 640 },
+  float = true,
+  border_size = 0,
 })
 
 hl.window_rule({
