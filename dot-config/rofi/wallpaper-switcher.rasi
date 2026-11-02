@@ -13,6 +13,7 @@ configuration {
     background: @bg;
     foreground: @fg;
     background-alt: @dim;
+    border: @surface;
 }
 
 
@@ -33,7 +34,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      2px solid;
-    border-color:                @selected;
+    border-color:                @border;
     border-radius:               10px;
     cursor:                      "default";
 }

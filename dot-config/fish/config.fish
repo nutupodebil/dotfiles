@@ -15,7 +15,7 @@ if status is-interactive
     abbr -a lt lsd --tree
     abbr -a cat bat
 
-    abbr -a psyu sudo pacman -Syu
+    abbr -a psyu doas pacman -Syu
     abbr -a ysyu yay -Syu
 
     abbr -a pss pacman -Ss

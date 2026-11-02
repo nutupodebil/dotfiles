@@ -6,7 +6,7 @@ window {
     font-family: JetBrainsMono Nerd Font Propo;
     font-size: 16pt;
     color:  @fg;
-    background-color: alpha(@dim, 0.6); /* rgba(24, 27, 32, 0.2) */
+    background-color: alpha(@bg, 0.6); /* rgba(24, 27, 32, 0.2) */
 }
 
 button {

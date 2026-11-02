@@ -1,1 +1,0 @@
-mon_bright = 'amdgpu_bl1'

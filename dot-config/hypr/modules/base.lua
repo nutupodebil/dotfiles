@@ -9,7 +9,7 @@ hl.config({
   general = {
     gaps_in = 6,
     gaps_out = 12,
-    border_size = 2,
+    border_size = 0,      --2,
     col = {
       active_border = fg, --accent
       inactive_border = dim,
@@ -25,14 +25,14 @@ hl.config({
   },
 
   decoration = {
-    rounding = 6,
+    rounding = 10,
     rounding_power = 2,
     active_opacity = 0.8,
     inactive_opacity = 0.5,
     shadow = {
       enabled = true,
-      range = 12,
-      render_power = 4,
+      range = 9,
+      render_power = 3,
       color = 0xee1a1a1a, --bg,
     },
     blur = {
@@ -66,7 +66,7 @@ hl.config({
 
   input = {
     kb_layout = "us, ru",
-    kb_variant = ",winkeys", --",mac"
+    kb_variant = ", winkeys",
     kb_options = "grp:win_space_toggle",
     follow_mouse = 1,
     sensitivity = 0,

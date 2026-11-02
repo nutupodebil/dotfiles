@@ -3,6 +3,7 @@
 @define-color selected        @accent;
 @define-color hover           alpha(@accent, .5);
 @define-color urgent          @surface;
+@define-color border          @surface;
 
 * {
 
@@ -30,7 +31,7 @@
 .floating-notifications.background .notification-row .notification-background {
   background: alpha(@surface, 1.0);
   box-shadow: 0 0 8px 0 rgba(0,0,0,.6);
-  border: 2px solid @selected;
+  border: 2px solid @border;
   border-radius: 8px;
   color: @text;
   margin: 6px;

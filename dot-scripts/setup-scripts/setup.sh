@@ -8,6 +8,7 @@ mkdir -p ~/.config/fastfetch
 mkdir -p ~/.config/fish
 mkdir -p ~/.config/gtk-3.0
 mkdir -p ~/.config/gtk-4.0
+mkdir -p ~/.config/hypr/modules
 mkdir -p ~/.config/hypr/monitor-profiles
 mkdir -p ~/.config/hyprmoncfg/profiles
 mkdir -p ~/.config/iris
@@ -68,12 +69,16 @@ yay -Syu --needed hyprmoncfg-bin \
 # rebuilding the get_backlight_device script
 clang++ --std=c++20 -O3 -fsanitize=address,undefined -Wall -Wextra -Werror ~/.dotfiles/dot-scripts/src/get_backlight_device.cpp -o ~/.dotfiles/dot-scripts/get_backlight_device
 
-# adding HyprCapture and hyprexpo plugins
+# adding HyprCapture and scroll-overview plugins
 hyprpm update
 hyprpm add https://github.com/gfhdhytghd/HyprCapture
+
+hyprpm add https://github.com/yayuuu/hyprland-scroll-overview.git
+hyprpm update
+
 hyprpm enable hyprcapture
-hyprpm add https://github.com/sandwichfarm/hyprexpo
-hyprpm enable hyprexpo
+hyprpm enable scrolloverview
+
 hyprpm reload
 
 # installing buttertodo

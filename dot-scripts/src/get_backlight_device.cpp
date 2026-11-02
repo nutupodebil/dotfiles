@@ -11,6 +11,10 @@ int main(){
     hypr << "mon_bright = '" << back_dev << "'";
     hypr.close();
 
+    std::ofstream hypridle(home + "/.config/hypr/modules/backlight_device.conf");
+    hypridle << "$mon_bright = " << back_dev;
+    hypridle.close();
+
     std::ifstream swaync_conf_in(home + "/.config/swaync/config");
     std::ofstream swaync_conf_out(home + "/.config/swaync/config.json");
 

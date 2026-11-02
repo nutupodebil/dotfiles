@@ -3,7 +3,7 @@
 @define-color selected        @accent;
 @define-color hover           alpha(@accent, .5);
 @define-color urgent          @dim;
-
+@define-color border          @surface;
 
 * {
   color: @text;
@@ -26,7 +26,7 @@
   background: alpha(@bg, 0.6);
   backdrop-filter: blur(20px);
   border-radius: 12px;
-  border: 2px solid @selected;
+  border: 2px solid @border;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
   margin: 18px;
   padding: 12px;

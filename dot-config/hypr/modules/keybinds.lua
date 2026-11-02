@@ -2,6 +2,8 @@
 --  keybindings
 --
 
+
+--  vars
 local mod = "SUPER"
 local file_manager = "nautilus"
 local menu = "rofi -show drun -theme ~/.config/rofi/style.rasi"
@@ -95,11 +97,3 @@ hl.bind(mod .. " + L", hl.dsp.exec_cmd("pkill wlogout || wlogout -s"))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 
 --hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
-
-
---  plugins binds
-hl.bind("SUPER + SHIFT + S", hl.plugin.hyprcapture.open)
-
-hl.bind(mod .. " + G", function()
-  hl.plugin.hyprexpo.expo("toggle")
-end)

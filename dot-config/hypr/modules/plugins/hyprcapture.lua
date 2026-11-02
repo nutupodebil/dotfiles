@@ -2,6 +2,7 @@
 --  HyprCapture plugin config
 --
 
+--  configuration
 hl.config({
   plugin = {
     hyprcapture = {
@@ -59,3 +60,6 @@ hl.config({
     },
   }
 })
+
+--  binds
+hl.bind("SUPER + SHIFT + S", hl.plugin.hyprcapture.open)

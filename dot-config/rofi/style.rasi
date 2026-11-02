@@ -16,6 +16,7 @@ configuration {
     background: @bg;
     foreground: @fg;
     background-alt: @dim; /* @surface @color7 */
+    border: @surface;
 }
 
 /*****----- Main Window -----*****/
@@ -33,7 +34,7 @@ window {
     padding:                     0px;
     border:                      2px solid;
     border-radius:               10px;
-    border-color:                @selected;
+    border-color:                @border;
     background-color:            @window-bg; /* rgba(0,0,0,0.5) */
     
     /*

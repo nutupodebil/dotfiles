@@ -21,7 +21,7 @@ require("modules/base")
 
 --  plugins
 require("modules/plugins/hyprcapture")
---require("modules/plugins/hyprexpo")
+require("modules/plugins/scroll_overview")
 
 --  devices
 require("modules/devices")
@@ -81,5 +81,3 @@ require("modules/layer_rules")
 
 --  workspace rules
 require("modules/workspace_rules")
-
-
